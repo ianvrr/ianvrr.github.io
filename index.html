@@ -1,55 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Anwar</title>
-        <link rel="stylesheet" href="CSS/styles.css">
-        <link rel="icon" href="images/A.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="top-container">
-            <img class="top-cloud" src="Images/cloud.png" alt="cloud-img">
-            <h1>I'm Anwar,</h1>
-            <h2>web <span class="Dev">dev</span>eloper.</h2>
-            <img class="bot-cloud" src="Images/cloud.png" alt="cloud-img">
-            <img src="Images/mountain.png" alt="mountain-img">
-        </div>
-        <div class="middle-container">
-            <div class="profile">
-              <img src="Images/img clean.png" alt="">
-              <h2>Hello.</h2>
-              <p class="intro">I'm a Full Stack Developer [MERN]. Also, the founder and CTO of <strong>ProjectL</strong></p>
-            </div>
-            <hr>
-            <div class="skills">
-              <h2>My Skills</h2>
-              <div class="skill-row">
-                <img class="mern-img" src="https://gurzu.com/img/gurzu/mern-stack-01.png" alt="">
-                <h3>Full Stack Web Development</h3>
-                <p>HTML, CSS, Bootstrap, JS, MongoDB, ExpressJS, ReactJS, NodeJS, Tailwind CSS, Typescript</p>
-              </div>
-              <div class="skill-row">
-                <img class="pro-img" src="https://www.freecodecamp.org/news/content/images/2020/08/Untitled-design-1-.png" alt="">
-                <h3>Software Development/Programming/Data Engineering</h3>
-                <p>Python, C, OracleSQL, MySQL</p>
-            </div>
-            </div>
-            <hr>
-            <div class="contact-me">
-                <h2>Get In Touch</h2>
-                <p class="contact-message"> Have an idea? discuss Tech? Hire Me?</p>
-                <a class="btn" href="mailto:anvrr@yahoo.com">CONTACT ME</a>
-            </div>
-          </div>
-          <div class="bottom-container">
-            <a class="footer-link" href="https://www.linkedin.com/ianvrr">LinkedIn</a>
-            <a class="footer-link" href="https://twitter.com/i_anvr">Twitter</a>
-            <a class="footer-link" href="https://ianvrr.github.io/">Website</a>
-            <p class="copyright">© Anwar Md @ ProjectL</p>
-          </div>
-          
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+            background: #0056b3;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about {
+            text-align: center;
+        }
+
+        .skills, .projects, .contact {
+            margin-top: 2rem;
+        }
+
+        .skills ul, .projects ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li, .projects li {
+            background: #fff;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            background: #007bff;
+            color: #fff;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+    
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm Anwar! A passionate Data Analyst and ETL expert with a proven track record of driving impactful business solutions. Explore my portfolio to learn more about my work and achievements.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Languages:</strong> SQL, Python</li>
+            <li><strong>Tools:</strong> Power BI, Excel, Altair Monarch</li>
+            <li><strong>Other:</strong> Data Migration, Process Improvement</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>WorkForceNow Implementation:</strong> Migrated HR & Payroll data for large enterprises, driving $3M+ revenue.</li>
+            <li><strong>Power BI Dashboards:</strong> Designed dashboards to track project KPIs and minimize risks.</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ianvrr" target="_blank">linkedin.com/in/ianvrr</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MD Anwar. All Rights Reserved.</p>
+    </footer>
+</body>
 </html>
