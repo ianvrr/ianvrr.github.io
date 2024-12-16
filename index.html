@@ -24,7 +24,7 @@
 
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
         }
 
@@ -38,11 +38,10 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
-            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #0073e6;
+            text-decoration: underline;
         }
 
         section {
@@ -52,7 +51,7 @@
         }
 
         section h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
@@ -68,12 +67,12 @@
         }
 
         .intro h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0.5rem 0;
         }
 
         .intro p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin: 1rem 0;
         }
 
@@ -87,18 +86,18 @@
         .btn-container a {
             padding: 0.8rem 1.5rem;
             text-decoration: none;
+            border: 1px solid #000;
+            background-color: transparent;
             color: #000;
             font-size: 1rem;
             font-weight: 500;
-            background-color: transparent;
-            border: 2px solid #000;
-            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+            border-radius: 5px;
+            transition: 0.3s ease;
         }
 
         .btn-container a:hover {
-            color: #fff;
             background-color: #000;
-            border-color: #000;
+            color: #fff;
         }
 
         .about-section {
@@ -107,71 +106,55 @@
             margin-top: 3rem;
         }
 
-        .info-section {
-            flex: 1;
-            margin-right: 3rem;
+        .left, .right {
+            width: 48%;
         }
 
-        .info-section h3 {
+        .about-section h3 {
             font-weight: 600;
-            font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
 
-        .info-section p {
-            font-size: 1.1rem;
+        .about-section p {
+            margin: 0.5rem 0;
         }
 
-        .experience-section {
-            flex: 1;
-        }
-
-        .experience-section h3 {
-            font-weight: 600;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-section p {
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-
-        /* Added Light Line Between Sections */
-        .section-divider {
-            margin-top: 2rem;
-            height: 1px;
-            background-color: #e0e0e0;
+        .line {
+            margin: 2rem 0;
+            border-top: 1px solid #e0e0e0;
         }
 
         footer {
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 2rem 0;
             margin-top: 3rem;
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
         }
 
         .contact-section {
-            margin-top: 3rem;
+            background-color: #000;
+            color: white;
             text-align: center;
-            background-color: #f7f7f7;
-            padding: 2rem 1.5rem;
+            padding: 2rem 0;
         }
 
-        .contact-section p {
-            font-size: 1.1rem;
-            margin: 0.5rem 0;
+        .contact-section a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
         }
 
-        .social-links {
-            margin-top: 1rem;
+        .contact-section a:hover {
+            color: #0073e6;
         }
 
         .social-links a {
             margin: 0 0.5rem;
             font-size: 1.5rem;
-            color: #000;
+            color: #fff;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -203,37 +186,34 @@
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="about">
+        <h2>Get To Know More</h2>
         <h2>About Me</h2>
         <div class="about-section">
-            <div class="info-section">
+            <div class="left">
                 <h3>Education</h3>
-                <p>VCE</p>
-                <p>Bachelor of Technology (2018 - 2022)</p>
+                <p>Bachelor of Technology</p>
+                <p>VCE, 2018 - 2022</p>
             </div>
-
-            <div class="experience-section">
+            <div class="right">
                 <h3>Experience</h3>
-                <p><strong>Data Analyst</strong> @ ADP</p>
+                <p>Data Analyst @ ADP</p>
                 <p>2022 - Present</p>
             </div>
         </div>
-
-        <p>Hi, I'm Anwar! A passionate Data Analyst and ETL expert with a proven track record of driving impactful business solutions. Explore my portfolio to learn more about my work and achievements.</p>
     </section>
 
-    <div class="section-divider"></div>
+    <div class="line"></div>
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact">
         <h2>Get in Touch</h2>
-        <p>Contact Me</p>
         <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
         <p>Phone: +123 456 7890</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/ianvrr" target="_blank">LinkedIn</a>
-            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-            <a href="https://www.hackerrank.com/yourprofile" target="_blank">HackerRank</a>
-            <a href="https://leetcode.com/yourprofile" target="_blank">LeetCode</a>
+            <a href="https://github.com/ianvrr" target="_blank">GitHub</a>
+            <a href="https://www.hackerrank.com/ianvrr" target="_blank">HackerRank</a>
+            <a href="https://leetcode.com/ianvrr" target="_blank">LeetCode</a>
         </div>
     </section>
 
