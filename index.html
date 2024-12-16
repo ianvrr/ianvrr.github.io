@@ -90,12 +90,15 @@
             color: #000;
             font-size: 1rem;
             font-weight: 500;
-            transition: color 0.3s ease, background-color 0.3s ease;
+            background-color: transparent;
+            border: 2px solid #000;
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .btn-container a:hover {
             color: #fff;
             background-color: #000;
+            border-color: #000;
         }
 
         .about-section {
@@ -131,7 +134,14 @@
 
         .experience-section p {
             font-size: 1.1rem;
-            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* Added Light Line Between Sections */
+        .section-divider {
+            margin-top: 2rem;
+            height: 1px;
+            background-color: #e0e0e0;
         }
 
         footer {
@@ -145,6 +155,8 @@
         .contact-section {
             margin-top: 3rem;
             text-align: center;
+            background-color: #f7f7f7;
+            padding: 2rem 1.5rem;
         }
 
         .contact-section p {
@@ -203,14 +215,16 @@
             <div class="experience-section">
                 <h3>Experience</h3>
                 <p><strong>Data Analyst</strong> @ ADP</p>
-                <p><em>2 Yrs. of Work Exp.</em></p>
+                <p>2022 - Present</p>
             </div>
         </div>
 
         <p>Hi, I'm Anwar! A passionate Data Analyst and ETL expert with a proven track record of driving impactful business solutions. Explore my portfolio to learn more about my work and achievements.</p>
     </section>
 
-    <section id="contact" class="contact">
+    <div class="section-divider"></div>
+
+    <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
         <p>Contact Me</p>
         <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
