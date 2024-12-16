@@ -26,6 +26,7 @@
             margin: 0;
             font-size: 1.8rem;
             font-weight: 700;
+            color: #000;
         }
 
         nav {
@@ -34,7 +35,7 @@
         }
 
         nav a {
-            color: #000000;
+            color: #000;
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
@@ -86,48 +87,46 @@
         .btn-container a {
             padding: 0.8rem 1.5rem;
             text-decoration: none;
-            border: 1px solid #0071e3;
-            background-color: #0071e3;
-            color: white;
+            border: 1px solid #000;
+            background-color: transparent;
+            color: #000;
             font-size: 1rem;
             font-weight: 500;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 5px;
+            transition: 0.3s ease;
         }
 
         .btn-container a:hover {
-            background-color: #005bb5;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        #about {
-            background-color: #e0f7fa;
-        }
-
-        #contact {
-            background-color: #f1f8e9;
+            background-color: #000;
+            color: #fff;
         }
 
         .about-section {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
-            gap: 2rem;
             margin-top: 3rem;
+        }
+
+        .left, .right {
+            width: 48%;
+        }
+
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .info-card {
             border: 1px solid #e0e0e0;
-            border-radius: 8px;
             padding: 1rem;
-            width: 45%;
+            text-align: center;
             background-color: #f9f9f9;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .info-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-weight: bold;
         }
 
         footer {
@@ -163,6 +162,26 @@
         .social-links a:hover {
             color: #0073e6;
         }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .about-section {
+                flex-direction: column;
+            }
+
+            .left, .right {
+                width: 100%;
+            }
+
+            .intro h1 {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -187,31 +206,37 @@
         </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="about">
         <h2>About Me</h2>
         <div class="about-section">
-            <div class="info-card left">
-                <h3><strong>Education</strong></h3>
-                <p><strong>2018 - 2022</strong></p>
-                <p>Bachelor of Technology</p>
-                <p><i>VCE</i></p>
+            <div class="left">
+                <div class="info-card">
+                    <h3>Education</h3>
+                    <p>2018 - 2022</p>
+                    <p>Bachelor of Technology</p>
+                    <p>VCE</p>
+                </div>
             </div>
-            <div class="info-card right">
-                <h3><strong>Experience</strong></h3>
-                <p><strong>Dec. 2022 - Present</strong></p>
-                <p>Data Analyst</p>
-                <p><i>Full Time, Hyderabad</i></p>
-                <p><strong>ADP</strong></p>
-                <p><strong>Oct. 2022 - Dec. 2022</strong></p>
-                <p>Market Research Analyst</p>
-                <p><i>Intern, Hyderabad</i></p>
+            <div class="right">
+                <div class="info-card">
+                    <h3>Experience</h3>
+                    <p>Dec.2022 - Now</p>
+                    <p>Data Analyst</p>
+                    <p><em>Full Time, Hyderabad</em></p>
+                    <p>ADP</p>
+                </div>
+                <div class="info-card">
+                    <p>Oct.2022 - Dec.2022</p>
+                    <p>Market Research Analyst</p>
+                    <p><em>Intern, Hyderabad</em></p>
+                    <p>ADP</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <p>Contact Me</p>
+        <h2>Contact Me</h2>
         <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
         <p>Phone: +123 456 7890</p>
         <div class="social-links">
