@@ -18,12 +18,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
         }
 
@@ -44,20 +45,20 @@
         }
 
         section {
-            max-width: 800px;
-            margin: 3rem auto;
-            text-align: center;
-            padding: 0 1rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
         }
 
         section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 600;
         }
 
         .intro {
-            margin-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
         }
 
         .intro h2 {
@@ -66,7 +67,7 @@
         }
 
         .intro h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin: 0.5rem 0;
         }
 
@@ -79,7 +80,7 @@
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
 
         .btn-container a {
@@ -101,24 +102,16 @@
 
         .about-section {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
+            flex-direction: column;
             gap: 2rem;
             margin-top: 3rem;
-        }
-
-        .about-section img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
         }
 
         .info-cards {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
+            justify-content: space-evenly;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
@@ -126,21 +119,28 @@
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             padding: 1rem;
-            width: 250px;
+            width: 300px;
             text-align: center;
             background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .info-card:hover {
+            transform: scale(1.05);
         }
 
         footer {
             text-align: center;
             padding: 2rem 0;
-            margin-top: 2rem;
+            margin-top: 3rem;
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
         }
 
         .contact-section {
             margin-top: 3rem;
+            text-align: center;
         }
 
         .contact-section p {
@@ -157,6 +157,7 @@
             font-size: 1.5rem;
             color: #000;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         .social-links a:hover {
@@ -190,7 +191,6 @@
         <h2>Get To Know More</h2>
         <h2>About Me</h2>
         <div class="about-section">
-            <img src="your-image.jpg" alt="Anwar">
             <div class="info-cards">
                 <div class="info-card">
                     <h3>Experience</h3>
@@ -203,8 +203,8 @@
                     <p>IIIT - Kadapa, AP</p>
                 </div>
             </div>
+            <p>Hi, I'm Anwar! A passionate Data Analyst and ETL expert with a proven track record of driving impactful business solutions. Explore my portfolio to learn more about my work and achievements.</p>
         </div>
-        <p>Hi, I'm Anwar! A passionate Data Analyst and ETL expert with a proven track record of driving impactful business solutions. Explore my portfolio to learn more about my work and achievements.</p>
     </section>
 
     <section id="contact" class="contact">
@@ -221,7 +221,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 MD Anwar. All Rights Reserved.</p>
+        <p>&copy; 2024 Anwar. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
