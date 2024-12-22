@@ -104,46 +104,57 @@
             margin-top: 3rem;
         }
 
-        .about-section h3 {
+        .about-section h2 {
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .about-section p {
-            margin: 0.5rem 0;
+        .timeline {
+            display: flex;
+            justify-content: space-between;
         }
 
-        .line {
-            margin: 2rem 0;
-            border-top: 1px solid #e0e0e0;
+        .timeline .left {
+            width: 48%;
         }
 
-        .sub-line {
-            border-top: 1px solid #ccc;
-            margin: 1.5rem 0;
+        .timeline .right {
+            width: 48%;
+            text-align: right;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-            border-top: 1px solid #e0e0e0;
-            background-color: #000;
-            color: #fff;
+        .timeline h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline p {
+            margin: 0;
         }
 
         .contact-section {
-            background-color: #000;
-            color: white;
+            background-color: #f9f9f9;
+            color: black;
             text-align: center;
             padding: 2rem 0;
         }
 
+        .contact-section h2 {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+            color: black;
+        }
+
+        .contact-section h3 {
+            color: #888;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
         .contact-section a {
-            color: #fff;
+            color: black;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin: 0 1rem;
             transition: color 0.3s;
         }
@@ -155,7 +166,7 @@
         .social-links a {
             margin: 0 0.5rem;
             font-size: 1.5rem;
-            color: #fff;
+            color: #000;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -164,16 +175,14 @@
             color: #0073e6;
         }
 
-        .quote-section {
-            font-style: italic;
-            text-align: center;
-            color: #666;
-            margin: 3rem 0 1.5rem;
+        a.adp-link:hover {
+            text-decoration: underline;
+            text-decoration-color: red;
         }
 
-        .summary-section {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+        a.dynata-link:hover {
+            text-decoration: underline;
+            text-decoration-color: blue;
         }
     </style>
 </head>
@@ -199,42 +208,49 @@
         </div>
     </section>
 
-        <div class="line"></div>
-
-    
-    <section id="about" class="about">
+    <section id="about" class="about-section">
         <h2>About Me</h2>
-        <div class="quote-section">
-            <p>"Take a chance; you’ve got nothing to lose." – Steve Jobs</p>
-        </div>
-        <div class="summary-section">
-            <p>I’m a data-driven problem solver passionate about using analytics and innovation to make a real impact. With over two years of experience in Data Analysis, Data Conversion, ETL, and Solution Architecture at ADP, I specialize in turning complex data into seamless, actionable solutions.</p>
-            <ul>
-                <li>Led 7+ high-impact projects, contributing $3M in revenue and $500K+ in annual recurring income.</li>
-                <li>Excelled in Advanced SQL and Altair Monarch, developing reusable workflows and scripts for efficient data extraction.</li>
-                <li>Built automated processes using Power Apps, Power Automate, and Power BI to enhance efficiency.</li>
-            </ul>
-            <p>Outside of work, I’m a Toastmasters enthusiast and served as Vice President of Public Relations for ADP Hyderabad Toastmasters.</p>
-        </div>
-        <div class="about-section">
+        <p>"Take a chance; you’ve got nothing to lose." – Steve Jobs</p>
+        <p>I’m a data-driven problem solver passionate about using analytics and innovation to make a real impact...</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
             <div class="left">
-                <h3>Education</h3>
+                <h3>2018 - 2022</h3>
                 <p>Bachelor of Technology</p>
-                <p>VCE, 2018 - 2022</p>
             </div>
-            <div class="sub-line"></div>
             <div class="right">
-                <h3>Experience</h3>
-                <p>Data Analyst @ ADP</p>
-                <p>2022 - Present</p>
+                <h3>VCE</h3>
             </div>
         </div>
     </section>
 
-    <div class="line"></div>
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="left">
+                <h3>2022 [December] - Present</h3>
+                <p>Data Analyst</p>
+            </div>
+            <div class="right">
+                <h3><a href="https://www.adp.com" class="adp-link" target="_blank">ADP</a></h3>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="left">
+                <h3>2022 [October] - 2022 [December]</h3>
+                <p>Market Research Analyst | Intern</p>
+            </div>
+            <div class="right">
+                <h3><a href="https://www.dynata.com" class="dynata-link" target="_blank">Dynata</a></h3>
+            </div>
+        </div>
+    </section>
 
-    <section id="contact" class="contact">
-        <h2>Work Together?</h2>
+    <section id="contact" class="contact-section">
+        <h3>Work Together?</h3>
         <h2>Get in Touch</h2>
         <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
         <p>Phone: +123 456 7890</p>
