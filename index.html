@@ -101,13 +101,7 @@
         }
 
         .about-section {
-            display: flex;
-            justify-content: space-between;
             margin-top: 3rem;
-        }
-
-        .left, .right {
-            width: 48%;
         }
 
         .about-section h3 {
@@ -122,6 +116,11 @@
         .line {
             margin: 2rem 0;
             border-top: 1px solid #e0e0e0;
+        }
+
+        .sub-line {
+            border-top: 1px solid #ccc;
+            margin: 1.5rem 0;
         }
 
         footer {
@@ -142,7 +141,7 @@
         }
 
         .contact-section a {
-            color: #000;  /* Updated color to black */
+            color: #fff;
             text-decoration: none;
             font-size: 1.5rem;
             margin: 0 1rem;
@@ -156,7 +155,7 @@
         .social-links a {
             margin: 0 0.5rem;
             font-size: 1.5rem;
-            color: #000;  /* Updated color to black */
+            color: #fff;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -165,13 +164,17 @@
             color: #0073e6;
         }
 
-        .about-section .get-to-know {
-            font-size: 0.9rem;
-            color: #666;
+        .quote-section {
+            font-style: italic;
             text-align: center;
-            margin-bottom: 0.5rem;
+            color: #666;
+            margin: 3rem 0 1.5rem;
         }
 
+        .summary-section {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -198,12 +201,25 @@
 
     <section id="about" class="about">
         <h2>About Me</h2>
+        <div class="quote-section">
+            <p>"Take a chance; you’ve got nothing to lose." – Steve Jobs</p>
+        </div>
+        <div class="summary-section">
+            <p>I’m a data-driven problem solver passionate about using analytics and innovation to make a real impact. With over two years of experience as a Data Conversion Consultant/ETL Engineer/Solutions Architect at ADP, I specialize in turning complex data into seamless, actionable solutions.</p>
+            <ul>
+                <li>Led 7+ high-impact projects, contributing $3M in revenue and $500K+ in annual recurring income.</li>
+                <li>Excelled in SQL and Altair Monarch, developing reusable workflows and scripts for efficient data extraction.</li>
+                <li>Built automated processes using Power Apps, Power Automate, and Power BI to enhance efficiency.</li>
+            </ul>
+            <p>Outside of work, I’m a Toastmasters enthusiast and served as Vice President of Public Relations for ADP Hyderabad Toastmasters.</p>
+        </div>
         <div class="about-section">
             <div class="left">
                 <h3>Education</h3>
                 <p>Bachelor of Technology</p>
                 <p>VCE, 2018 - 2022</p>
             </div>
+            <div class="sub-line"></div>
             <div class="right">
                 <h3>Experience</h3>
                 <p>Data Analyst @ ADP</p>
@@ -215,6 +231,9 @@
     <div class="line"></div>
 
     <section id="contact" class="contact">
+        <h2>Work Together?</h2>
+        <p>If you’re looking for a passionate data professional, let's connect.</p>
+        <div class="line"></div>
         <h2>Get in Touch</h2>
         <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
         <p>Phone: +123 456 7890</p>
