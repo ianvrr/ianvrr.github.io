@@ -9,17 +9,17 @@
         body {
             margin: 0;
             font-family: 'Manrope', sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            color: #000;
+            background-color: #fff;
             line-height: 1.6;
         }
 
         header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #eaeaea;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid #e0e0e0;
         }
 
         header h1 {
@@ -28,16 +28,12 @@
             font-weight: 700;
         }
 
-        nav {
-            display: flex;
-            gap: 1.5rem;
-        }
-
         nav a {
-            color: #000000;
             text-decoration: none;
-            font-weight: 500;
+            margin-left: 1.5rem;
+            color: #000;
             font-size: 1rem;
+            font-weight: 500;
         }
 
         nav a:hover {
@@ -45,25 +41,19 @@
         }
 
         section {
-            max-width: 1000px;
-            margin: 4rem auto;
+            max-width: 800px;
+            margin: 3rem auto;
             padding: 0 1.5rem;
         }
 
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             font-weight: 600;
         }
 
         .intro {
-            margin-top: 3rem;
             text-align: center;
-        }
-
-        .intro h2 {
-            font-size: 1.5rem;
-            margin: 0.5rem 0;
         }
 
         .intro h1 {
@@ -73,25 +63,22 @@
 
         .intro p {
             font-size: 1.2rem;
-            margin: 1rem 0;
         }
 
         .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
+            margin-top: 2rem;
         }
 
         .btn-container a {
-            padding: 0.8rem 1.5rem;
             text-decoration: none;
+            padding: 0.8rem 1.5rem;
             border: 1px solid #000;
             background-color: transparent;
             color: #000;
             font-size: 1rem;
             font-weight: 500;
             border-radius: 5px;
+            margin-right: 1rem;
             transition: 0.3s ease;
         }
 
@@ -100,89 +87,76 @@
             color: #fff;
         }
 
-        .about-section {
-            margin-top: 3rem;
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .about-section h2 {
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline {
+        .entry {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 1rem;
         }
 
-        .timeline .left {
-            width: 48%;
+        .entry:last-child {
+            border-bottom: none;
         }
 
-        .timeline .right {
-            width: 48%;
+        .entry .left {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .entry .right {
             text-align: right;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
-        .timeline h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline p {
-            margin: 0;
-        }
-
-        .contact-section {
-            background-color: #f9f9f9;
-            color: black;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .contact-section h2 {
-            font-size: 1.8rem;
-            margin: 0.5rem 0;
-            color: black;
-        }
-
-        .contact-section h3 {
-            color: #888;
-            font-size: 1.2rem;
-            margin: 0;
-        }
-
-        .contact-section a {
-            color: black;
+        .entry a {
             text-decoration: none;
-            font-size: 1.2rem;
-            margin: 0 1rem;
+            color: #000;
             transition: color 0.3s;
         }
 
-        .contact-section a:hover {
+        .entry a:hover {
             color: #0073e6;
+            text-decoration: underline;
         }
 
-        .social-links a {
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
+        .contact {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 2rem 1.5rem;
+        }
+
+        .contact h3 {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin: 0.5rem;
             color: #000;
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
-        .social-links a:hover {
+        .contact a:hover {
             color: #0073e6;
         }
 
-        a.adp-link:hover {
-            text-decoration: underline;
-            text-decoration-color: red;
-        }
-
-        a.dynata-link:hover {
-            text-decoration: underline;
-            text-decoration-color: blue;
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #eaeaea;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -191,74 +165,76 @@
         <h1>Anwar</h1>
         <nav>
             <a href="#about">About</a>
+            <a href="#education">Education</a>
             <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section class="intro">
-        <h2>Hello, I'm</h2>
         <h1>Anwar</h1>
-        <p>and, I'm open for</p>
-        <h2>Data Scientist / Data Analyst Roles</h2>
+        <p>Data Analyst | Open to Opportunities</p>
         <div class="btn-container">
             <a href="#">Download Resume</a>
-            <a href="#contact">Contact Info</a>
+            <a href="#contact">Contact Me</a>
         </div>
     </section>
 
-    <section id="about" class="about-section">
+    <section id="about">
         <h2>About Me</h2>
         <p>"Take a chance; you’ve got nothing to lose." – Steve Jobs</p>
-        <p>I’m a data-driven problem solver passionate about using analytics and innovation to make a real impact...</p>
+        <p>I am a data-driven professional passionate about solving problems with analytics and technology...</p>
     </section>
 
     <section id="education">
         <h2>Education</h2>
-        <div class="timeline">
-            <div class="left">
-                <h3>2018 - 2022</h3>
-                <p>Bachelor of Technology</p>
-            </div>
-            <div class="right">
-                <h3>VCE</h3>
+        <div class="section-content">
+            <div class="entry">
+                <div class="left">
+                    <p>2018 - 2022</p>
+                    <p>Bachelor of Technology</p>
+                </div>
+                <div class="right">
+                    <p>VCE</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="experience">
         <h2>Experience</h2>
-        <div class="timeline">
-            <div class="left">
-                <h3>2022 [December] - Present</h3>
-                <p>Data Analyst</p>
+        <div class="section-content">
+            <div class="entry">
+                <div class="left">
+                    <p>2022 [December] - Present</p>
+                    <p>Data Analyst</p>
+                </div>
+                <div class="right">
+                    <a href="https://www.adp.com" target="_blank">ADP</a>
+                </div>
             </div>
-            <div class="right">
-                <h3><a href="https://www.adp.com" class="adp-link" target="_blank">ADP</a></h3>
-            </div>
-        </div>
-        <div class="timeline">
-            <div class="left">
-                <h3>2022 [October] - 2022 [December]</h3>
-                <p>Market Research Analyst | Intern</p>
-            </div>
-            <div class="right">
-                <h3><a href="https://www.dynata.com" class="dynata-link" target="_blank">Dynata</a></h3>
+            <div class="entry">
+                <div class="left">
+                    <p>2022 [October] - 2022 [December]</p>
+                    <p>Market Research Analyst | Intern</p>
+                </div>
+                <div class="right">
+                    <a href="https://www.dynata.com" target="_blank">Dynata</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact">
         <h3>Work Together?</h3>
         <h2>Get in Touch</h2>
         <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
         <p>Phone: +123 456 7890</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/ianvrr" target="_blank">LinkedIn</a>
+        <div>
+            <a href="https://linkedin.com/in/ianvrr" target="_blank">LinkedIn</a>
             <a href="https://github.com/ianvrr" target="_blank">GitHub</a>
-            <a href="https://www.hackerrank.com/ianvrr" target="_blank">HackerRank</a>
             <a href="https://leetcode.com/ianvrr" target="_blank">LeetCode</a>
+            <a href="https://hackerrank.com/ianvrr" target="_blank">HackerRank</a>
         </div>
     </section>
 
