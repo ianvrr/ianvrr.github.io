@@ -6,6 +6,7 @@
   <title>Anwar MD | Analytics Dashboard Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <style>
     body {
       font-family: 'Manrope', sans-serif;
@@ -190,6 +191,7 @@
       gap: 1.6rem;
       margin-top: 0.2rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .project-card {
       background: #fff7f7;
@@ -221,7 +223,7 @@
     /* Contact */
     #contact {
       max-width: 650px;
-      margin: 1.5rem auto;
+      margin: 2rem auto;
       padding: 2.8rem 2.3rem;
       border-radius: 1.35rem;
       background: #fff7f7;
@@ -269,7 +271,6 @@
     #contact .social-links a:focus {
       color: #aa001a;
     }
-
     footer {
       background: #d0021b;
       color: #fff;
@@ -289,174 +290,178 @@
         grid-template-columns: 1fr;
       }
       .projects-grid {
-        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 10px;
       }
       .project-card {
-        max-width: 99%;
-      }
-      .skills-panel {
-        max-width: 100%;
+        min-width: 90vw;
+        max-width: 90vw;
       }
       #contact {
-        max-width: 90vw;
+        max-width: 95vw;
         margin: 1rem auto;
       }
       #contact .social-links {
-        gap: 1.8rem;
+        gap: 1.5rem;
       }
       #contact .social-links a {
-        font-size: 2.3rem;
+        font-size: 2.1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Anwar MD</h1>
-    <nav>
-      <button class="nav-btn active" data-target="welcome">Welcome</button>
-      <button class="nav-btn" data-target="about">About</button>
-      <button class="nav-btn" data-target="skills">Skills</button>
-      <button class="nav-btn" data-target="experience">Experience</button>
-      <button class="nav-btn" data-target="projects">Projects</button>
-      <button class="nav-btn" data-target="contact">Contact</button>
-    </nav>
-  </header>
 
-  <main>
-    <div class="dashboard-row">
-      <section id="welcome" tabindex="0" class="dashboard-panel welcome">
-        <h1>Hello, I'm Anwar MD</h1>
-        <div class="panel-subtitle">Analytics Consultant & Data Scientist</div>
-        <div class="btn-group" style="margin-top: 1.25rem;">
-          <a href="#" class="btn">Download CV</a>
-          <button class="btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
-            Contact Me
-          </button>
-        </div>
-      </section>
-      <section id="skills" tabindex="0" class="dashboard-panel skills-panel">
-        <h3>Technical Skills</h3>
-        <div class="skills-chart-wrapper">
-          <canvas id="skillsRadar"></canvas>
-        </div>
-      </section>
-    </div>
+<header>
+  <h1>Anwar MD</h1>
+  <nav>
+    <button class="nav-btn active" data-target="welcome">Welcome</button>
+    <button class="nav-btn" data-target="about">About</button>
+    <button class="nav-btn" data-target="skills">Skills</button>
+    <button class="nav-btn" data-target="experience">Experience</button>
+    <button class="nav-btn" data-target="projects">Projects</button>
+    <button class="nav-btn" data-target="contact">Contact</button>
+  </nav>
+</header>
 
-    <div class="dashboard-row">
-      <section id="about" tabindex="0" class="dashboard-panel">
-        <h3>About Me</h3>
-        <div class="panel-subtitle" style="font-weight: 700; margin-bottom: 1.5rem;">
-          "Take a chance, you’ve got nothing to lose." — Steve Jobs
-        </div>
-        <p>
-          I'm a passionate, data-driven analytics consultant who transforms business impact using cloud data, automation, and visualization. I've led payroll migrations, automated analytics workflows, and architected end-to-end insight dashboards for global organizations.
-        </p>
-      </section>
-      <section id="experience" tabindex="0" class="dashboard-panel">
-        <h3>Experience</h3>
-        <div class="timeline" aria-label="Timeline" role="list">
-          <div class="timeline-item" role="listitem" tabindex="0">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h4>Data Analyst @ ADP</h4>
-              <div class="timeline-year">2022 - 2024</div>
-              <p>Led large-scale HR and payroll data migrations for 50K+ employees; delivered $3M+ revenue impact.</p>
-            </div>
-          </div>
-          <div class="timeline-item" role="listitem" tabindex="0">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h4>Analytics Consultant @ Loyalty Juggernaut</h4>
-              <div class="timeline-year">2024 - Present</div>
-              <p>Architecting cloud-native AWS analytics for loyalty programs and executive dashboards.</p>
-            </div>
+<main>
+  <div class="dashboard-row">
+    <section id="welcome" tabindex="0" class="dashboard-panel welcome">
+      <h1>Hello, I'm Anwar MD</h1>
+      <div class="panel-subtitle">Analytics Consultant & Data Scientist</div>
+      <div class="btn-group" style="margin-top: 1.25rem;">
+        <a href="#" class="btn">Download CV</a>
+        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+          Contact Me
+        </button>
+      </div>
+    </section>
+    <section id="skills" tabindex="0" class="dashboard-panel skills-panel">
+      <h3>Technical Skills</h3>
+      <div class="skills-chart-wrapper">
+        <canvas id="skillsRadar"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <div class="dashboard-row">
+    <section id="about" tabindex="0" class="dashboard-panel">
+      <h3>About Me</h3>
+      <div class="panel-subtitle" style="font-weight: 700; margin-bottom: 1.5rem;">
+        "Take a chance, you’ve got nothing to lose." — Steve Jobs
+      </div>
+      <p>
+        I'm a passionate, data-driven analytics consultant who transforms business impact using cloud data, automation, and visualization. I've led payroll migrations, automated analytics workflows, and architected end-to-end insight dashboards for global organizations.
+      </p>
+    </section>
+    <section id="experience" tabindex="0" class="dashboard-panel">
+      <h3>Experience</h3>
+      <div class="timeline" role="list" aria-label="Timeline experience">
+        <div class="timeline-item" role="listitem" tabindex="0">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4>Data Analyst @ ADP</h4>
+            <div class="timeline-year">2022 - 2024</div>
+            <p>Led large-scale HR and payroll data migrations for 50K+ employees; delivered $3M+ revenue impact.</p>
           </div>
         </div>
-      </section>
-    </div>
-
-    <section id="projects" tabindex="0" class="dashboard-panel">
-      <h3>Projects</h3>
-      <div class="projects-grid" tabindex="0">
-        <div class="project-card" tabindex="0">
-          <h3>Carpooling Website & Android App</h3>
-          <p>Corporate-verified ride sharing platform with email and Aadhaar verification.</p>
-        </div>
-        <div class="project-card" tabindex="0">
-          <h3>Payroll Data Migration Automation</h3>
-          <p>Python automation and GUI tools for validating paygroup totals and migration workflows.</p>
-        </div>
-        <div class="project-card" tabindex="0">
-          <h3>Loyalty Analytics Dashboards</h3>
-          <p>Architected AWS-native pipelines and dashboards improving revenue and retention.</p>
+        <div class="timeline-item" role="listitem" tabindex="0">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4>Analytics Consultant @ Loyalty Juggernaut</h4>
+            <div class="timeline-year">2024 - Present</div>
+            <p>Architecting cloud-native AWS analytics for loyalty programs and executive dashboards.</p>
+          </div>
         </div>
       </div>
     </section>
+  </div>
 
-    <section id="contact" tabindex="0" class="dashboard-panel" style="max-width:650px; margin:auto; text-align:center;">
-      <h2>Let's Work Together</h2>
-      <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
-      <p>Phone: <a href="tel:+919440672016">+91 94406 72016</a></p>
-      <div class="social-links" role="list" aria-label="Social Media Links" style="display:flex; justify-content:center; gap:24px; margin-top:1.5rem;">
-        <a href="https://linkedin.com/in/ianvrr" target="_blank" rel="noopener" aria-label="LinkedIn" role="listitem" style="color:#d0021b; font-size:38px;">
-          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M21 0h-18c-1.657 0-3 1.343-3 3v18c0 1.657 1.343 3 3 3h18c1.657 0 3-1.343 3-3v-18zM7 20H4v-9h3v9zM5.5 9.5C4.67 9.5 4 8.83 4 8s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5 10.5h-3v-5c0-2-1-3-3-3-1.5 0-2 1-2 2v6h-3v-10h3v1.428c.523-.728 1.577-1.428 2.497-1.428 2.255 0 3.583 1.704 3.583 4.615v5.385z"/></svg>
-        </a>
-        <a href="https://github.com/ianvrr" target="_blank" rel="noopener" aria-label="GitHub" role="listitem" style="color:#d0021b; font-size:38px;">
-          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.385.6.111.82-.26.82-.577 0-.285-.01-1.04-.015-2.043-3.338.725-4.042-1.61-4.042-1.61-.546-1.389-1.334-1.758-1.334-1.758-1.089-.745.085-.73.085-.73 1.205.085 1.84 1.24 1.84 1.24 1.07 1.833 2.81 1.304 3.495 1 .109-.776.42-1.306.764-1.606-2.665-.303-5.466-1.334-5.466-5.932 0-1.31.469-2.382 1.235-3.222-.124-.302-.537-1.522.117-3.176 0 0 1.008-.322 3.3 1.232a11.5 11.5 0 0 1 3-.399c1.02 0 2.046.134 3.006.4 2.29-1.553 3.296-1.23 3.296-1.23.655 1.655.243 2.874.118 3.177a4.668 4.668 0 0 1 1.235 3.22c0 4.607-2.803 5.62-5.473 5.92.429.373.813 1.104.813 2.222 0 1.605-.015 2.9-.015 3.293 0 .32.217.695.826.577C20.568 21.795 24 17.296 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        </a>
-        <a href="https://hackerrank.com/ianvrr" target="_blank" rel="noopener" aria-label="HackerRank" role="listitem" style="color:#d0021b; font-size:38px;">
-          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M20.588 17.236c-.003 0-.004 0-.006 0L13.033 21.54a.996.996 0 0 1-.99 0l-7.44-4.305a.99.99 0 0 1-.496-.855V6.601a.99.99 0 0 1 .496-.856l7.444-4.307a.997.997 0 0 1 .991 0l7.44 4.307a.994.994 0 0 1 .496.855v8.776a.99.99 0 0 1-.496.855zm-8.405-7.81 1.815-1.05 1.815 1.05v-1.557a6.606 6.606 0 0 1 .753 1.536 2.517 2.517 0 0 1-.753 3.034v-1.544l-1.813 1.05-1.818-1.05v1.542a2.53 2.53 0 0 1-.753-3.028 6.987 6.987 0 0 1 .751-1.55zm-3.474 2.805A3.516 3.516 0 0 0 6 12a3.52 3.52 0 0 0 2.717 3.318 3.517 3.517 0 0 0 3.556-1.081v-.003A3.516 3.516 0 0 0 12 12a3.52 3.52 0 0 0-3.363-2.799z"/></svg>
-        </a>
-        <a href="https://leetcode.com/ianvrr" target="_blank" rel="noopener" aria-label="LeetCode" role="listitem" style="color:#d0021b; font-size:38px;">
-          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M20.37 3.584c-3.857-3.863-10.13-3.865-13.985 0s-3.867 10.13 0 13.975c3.857 3.865 10.13 3.865 13.985 0s3.867-10.13 0-13.974zm-1.847 12.21a8.054 8.054 0 01-5.15 2.03v-1.97a6.054 6.054 0 003.49-1.454c.27-.25.38-.65.25-1.01a.808.808 0 00-.69-.56c-.17-.03-.36.02-.5.15a4.544 4.544 0 01-2.37.94c-2.05.2-3.93-1.18-4.38-3.29-.36-1.76.63-3.5 2.33-4.06 1.57-.5 3.37.15 4.38 1.54.11.13.24.22.39.26.23.21.6.15.63-.16.36-.28.43-.78.18-1.17a6.043 6.043 0 00-3.66-2.12v-2.18c3.96.31 7.09 3.92 7.09 7.1 0 1.45-.34 2.8-.98 4.01z"/></svg>
-        </a>
+  <section id="projects" tabindex="0" class="dashboard-panel">
+    <h3>Projects</h3>
+    <div class="projects-grid" tabindex="0">
+      <div class="project-card" tabindex="0">
+        <h3>Carpooling Website & Android App</h3>
+        <p>Corporate-verified ride sharing platform with email and Aadhaar verification.</p>
       </div>
-    </section>
-  </main>
+      <div class="project-card" tabindex="0">
+        <h3>Payroll Data Migration Automation</h3>
+        <p>Python automation and GUI tools for validating paygroup totals and migration workflows.</p>
+      </div>
+      <div class="project-card" tabindex="0">
+        <h3>Loyalty Analytics Dashboards</h3>
+        <p>Architected AWS-native pipelines and dashboards improving revenue and retention.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" tabindex="0" class="dashboard-panel" style="max-width:650px; margin:auto; text-align:center;">
+    <h2>Let's Work Together</h2>
+    <p>Email: <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a></p>
+    <p>Phone: <a href="tel:+919440672016">+91 94406 72016</a></p>
+    <div class="social-links" role="list" aria-label="Social Media Links" style="display:flex; justify-content:center; gap:24px; margin-top:1.5rem;">
+      <a href="https://linkedin.com/in/ianvrr" target="_blank" rel="noopener" aria-label="LinkedIn" role="listitem" style="color:#d0021b; font-size:38px;">
+        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M21 0h-18c-1.657 0-3 1.343-3 3v18c0 1.657 1.343 3 3 3h18c1.657 0 3-1.343 3-3v-18zM7 20H4v-9h3v9zM5.5 9.5C4.67 9.5 4 8.83 4 8s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5 10.5h-3v-5c0-2-1-3-3-3-1.5 0-2 1-2 2v6h-3v-10h3v1.428c.523-.728 1.577-1.428 2.497-1.428 2.255 0 3.583 1.704 3.583 4.615v5.385z"/></svg>
+      </a>
+      <a href="https://github.com/ianvrr" target="_blank" rel="noopener" aria-label="GitHub" role="listitem" style="color:#d0021b; font-size:38px;">
+        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.385.6.111.82-.26.82-.577 0-.285-.01-1.04-.015-2.043-3.338.725-4.042-1.61-4.042-1.61-.546-1.389-1.334-1.758-1.334-1.758-1.089-.745.085-.73.085-.73 1.205.085 1.84 1.24 1.84 1.24 1.07 1.833 2.81 1.304 3.495 1 .109-.776.42-1.306.764-1.606-2.665-.303-5.466-1.334-5.466-5.932 0-1.31.469-2.382 1.235-3.222-.124-.302-.537-1.522.117-3.176 0 0 1.008-.322 3.3 1.232a11.5 11.5 0 0 1 3-.399c1.02 0 2.046.134 3.006.4 2.29-1.553 3.296-1.23 3.296-1.23.655 1.655.243 2.874.118 3.177a4.668 4.668 0 0 1 1.235 3.22c0 4.607-2.803 5.62-5.473 5.92.429.373.813 1.104.813 2.222 0 1.605-.015 2.9-.015 3.293 0 .32.217.695.826.577C20.568 21.795 24 17.296 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="https://hackerrank.com/ianvrr" target="_blank" rel="noopener" aria-label="Hackerrank" role="listitem" style="color:#d0021b; font-size:38px;">
+        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M20.588 17.236c-.003 0-.004 0-.006 0L13.033 21.54a.996.996 0 0 1-.99 0l-7.44-4.305a.99.99 0 0 1-.496-.855V6.601a.99.99 0 0 1 .496-.856l7.444-4.307a.997.997 0 0 1 .991 0l7.44 4.307a.994.994 0 0 1 .496.855v8.776a.99.99 0 0 1-.496.855zm-8.405-7.81 1.815-1.05 1.815 1.05v-1.557a6.606 6.606 0 0 1 .753 1.536 2.517 2.517 0 0 1-.753 3.034v-1.544l-1.813 1.05-1.818-1.05v1.542a2.53 2.53 0 0 1-.753-3.028 6.987 6.987 0 0 1 .751-1.55zm-3.474 2.805A3.516 3.516 0 0 0 6 12a3.52 3.52 0 0 0 2.717 3.318 3.517 3.517 0 0 0 3.556-1.081v-.003A3.516 3.516 0 0 0 12 12a3.52 3.52 0 0 0-3.363-2.799z"/></svg>
+      </a>
+      <a href="https://leetcode.com/ianvrr" target="_blank" rel="noopener" aria-label="LeetCode" role="listitem" style="color:#d0021b; font-size:38px;">
+        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M20.37 3.584c-3.857-3.863-10.13-3.865-13.985 0s-3.867 10.13 0 13.975c3.857 3.865 10.13 3.865 13.985 0s3.867-10.13 0-13.974zm-1.847 12.21a8.054 8.054 0 01-5.15 2.03v-1.97a6.054 6.054 0 003.49-1.454c.27-.25.38-.65.25-1.01a.808.808 0 00-.69-.56c-.17-.03-.36.02-.5.15a4.544 4.544 0 01-2.37.94c-2.05.2-3.93-1.18-4.38-3.29-.36-1.76.63-3.5 2.33-4.06 1.57-.5 3.37.15 4.38 1.54.11.13.24.22.39.26.23.21.6.15.63-.16.36-.28.43-.78.18-1.17a6.043 6.043 0 00-3.66-2.12v-2.18c3.96.31 7.09 3.92 7.09 7.1 0 1.45-.34 2.8-.98 4.01z"/></svg>
+      </a>
+    </div>
+  </section>
 
   <footer>
     &copy; 2025 Anwar MD. All rights reserved.
   </footer>
 
   <script>
+    // Navigation button click
     document.querySelectorAll('nav button').forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
         const section = document.getElementById(btn.dataset.target);
         if (section) {
-          section.scrollIntoView({behavior:'smooth'});
-          document.querySelectorAll('nav button').forEach(btn=>btn.classList.remove('active'));
+          section.scrollIntoView({ behavior: 'smooth' });
+          document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
           btn.classList.add('active');
         }
       });
     });
 
+    // Update nav active on scroll
     window.addEventListener('scroll', () => {
-      const sections = ['welcome','about','skills','experience','projects','contact'];
-      const scrollPos = window.scrollY + window.innerHeight/3;
+      const sections = ['welcome', 'about', 'skills', 'experience', 'projects', 'contact'];
+      let scrollPos = window.scrollY + window.innerHeight / 3;
       let found = false;
-      for(let id of sections){
+      for (let id of sections) {
         const sec = document.getElementById(id);
-        if(sec && sec.offsetTop <= scrollPos){
-          document.querySelectorAll('nav button').forEach(btn=>btn.classList.remove('active'));
-          const activeBtn = document.querySelector(`nav button[data-target=${id}]`);
-          if(activeBtn) activeBtn.classList.add('active');
+        if (sec && sec.offsetTop <= scrollPos) {
+          document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+          const activeBtn = document.querySelector(`nav button[data-target="${id}"]`);
+          if (activeBtn) activeBtn.classList.add('active');
           found = true;
         }
       }
-      if(!found) document.querySelectorAll('nav button').forEach(btn=>btn.classList.remove('active'));
+      if (!found) {
+        document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+      }
     });
 
-    function initRadar(){
+    // Init radar chart for skills
+    function initRadar() {
       const ctx = document.getElementById('skillsRadar').getContext('2d');
       new Chart(ctx, {
         type: 'radar',
         data: {
-          labels:['SQL','Python','AWS Redshift','AWS Glue','AWS Athena','AWS SageMaker','AWS QuickSight','Boto3','ETL/ELT','PostgreSQL','AWS DMS','ElastiCache','Power BI','Looker Studio','Jira & Confluence'],
-          datasets:[{
-            label:'Skill Level %',
-            data: [90,85,80,75,70,65,80,70,85,80,70,60,70,65,75],
+          labels: ['SQL', 'Python', 'AWS Redshift', 'AWS Glue', 'AWS Athena', 'AWS SageMaker', 'AWS QuickSight', 'Boto3', 'ETL/ELT', 'PostgreSQL', 'AWS DMS', 'ElastiCache', 'Power BI', 'Looker Studio', 'Jira & Confluence'],
+          datasets: [{
+            label: 'Skill Level %',
+            data: [90, 85, 80, 75, 70, 65, 80, 70, 85, 80, 70, 60, 70, 65, 75],
             backgroundColor: 'rgba(208,2,27,0.16)',
             borderColor: '#d0021b',
             borderWidth: 2,
@@ -466,24 +471,24 @@
             pointHoverBorderColor: '#d0021b',
           }]
         },
-        options:{
-          scales:{
-            r:{
-              angleLines: {color: '#d0021b34'},
-              grid: {color: '#d0021b22'},
-              pointLabels: {color: '#d0021b', font: {size:14}},
-              min:0,
-              max:100,
-              ticks: {stepSize:20, color:'#d0021b', showLabelBackdrop:false}
+        options: {
+          scales: {
+            r: {
+              angleLines: { color: '#d0021b34' },
+              grid: { color: '#d0021b22' },
+              pointLabels: { color: '#d0021b', font: { size: 14 } },
+              min: 0,
+              max: 100,
+              ticks: { stepSize: 20, color: '#d0021b', showLabelBackdrop: false }
             }
           },
-          plugins:{
-            legend:{
-              labels:{color:'#d0021b', font:{size:15, weight:'bold'}}
+          plugins: {
+            legend: {
+              labels: { color: '#d0021b', font: { size: 15, weight: 'bold' } }
             }
           },
-          responsive:true,
-          maintainAspectRatio:false,
+          responsive: true,
+          maintainAspectRatio: false,
         }
       });
     }
