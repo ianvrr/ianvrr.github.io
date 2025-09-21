@@ -4,116 +4,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anwar MD | Analytics Consultant Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+    :root {
+      --bg-main: #FDFFF7;
+      --bg-card: #FFF;
+      --accent-red: #E84855;
+      --text-dark: #424B54;
+      --timeline-line: #424B54;
+    }
     body {
-      font-family: 'Manrope', 'Inter', sans-serif;
-      background: #faf9fa;
-      color: #222;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-main);
+      color: var(--text-dark);
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     header {
-      background: #fff;
-      box-shadow: 0 2px 9px #ddd1;
-      height: 58px; z-index: 1000;
-      display: flex; align-items: center; width:100%;
-      position: sticky; top:0; left:0; right:0;
-      padding: 0 2.1rem;
+      background: var(--bg-card);
+      box-shadow: 0 2px 9px #e8485528;
+      height: 58px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      font-family: 'Montserrat', sans-serif;
+      z-index: 1000;
     }
     header h1 {
-      color: #d0021b; font-weight: 900;
-      font-size: 2.1rem; letter-spacing: .01em;
-      margin: 0; flex:1;
-      font-family: inherit;
-    }
-    nav { display: flex; gap: 1.5rem;}
-    nav button {
-      background: none; border: none; color: #222;
-      font-size: 1rem; font-weight: 700; border-radius: 7px;
-      padding: 7px 18px; cursor: pointer; transition: .19s;
-    }
-    nav button.active, nav button:hover, nav button:focus {
-      background: #d0021b; color: #fff !important;
-      outline: none;
-    }
-
-    main {
-      margin: 0 auto;
-      max-width: 970px;
-      padding: 0 1.2rem 3.4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2.3rem;
-    }
-    .welcome-section {
-      margin-top: 74px;
-      text-align: center;
-      background: #fff;
-      border-radius: 1.2rem;
-      box-shadow: 0 6px 32px rgba(208,2,27,0.09);
-      padding: 2.35rem 1.2rem 2rem 1.2rem;
-    }
-    .welcome-section h2 {
-      color: #d0021b;
+      color: var(--accent-red);
       font-weight: 900;
-      font-size: 2.4rem;
-      margin-bottom: 0.6rem;
+      font-size: 1.6rem;
+      margin: 0;
+      flex-grow: 1;
+      letter-spacing: 0.07em;
     }
-    .welcome-sub {
-      font-size: 1.14rem;
-      color: #333;
-      margin-bottom: 1.4rem;
-      font-weight: 500;
+    nav {
+      display: flex;
+      gap: 1.05rem;
     }
-    .btn-group { margin-bottom: 1rem; display: flex; justify-content: center; gap: 1rem;}
-    .btn {
-      padding: 0.67rem 1.82rem;
-      border-radius: 23px;
-      font-size: 1.09rem;
-      font-weight: 700;
-      background: #d0021b;
-      color: #fff;
+    nav button {
+      background: none;
       border: none;
       cursor: pointer;
-      transition: background .21s;
-      display: inline-block;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: var(--text-dark);
+      padding: 7px 14px;
+      border-radius: 7px;
+      transition: background 0.19s, color 0.19s;
     }
-    .btn:hover, .btn:focus { background: #b0021a; }
-
+    nav button.active,
+    nav button:focus,
+    nav button:hover {
+      background: var(--accent-red);
+      color: #fff;
+      outline: none;
+    }
+    main {
+      max-width: 980px;
+      margin: 3.7rem auto 3rem;
+      padding: 0 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .welcome-section {
+      text-align: center;
+      background: var(--bg-card);
+      border-radius: 1.2rem;
+      box-shadow: 0 6px 28px #e848551a;
+      padding: 3rem 2rem 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .welcome-section h2 {
+      color: var(--accent-red);
+      font-weight: 900;
+      font-size: 2.4rem;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.03em;
+    }
+    .welcome-sub {
+      color: var(--text-dark);
+      font-size: 1.07rem;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.04em;
+      font-family: inherit;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .btn {
+      background: var(--accent-red);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2.0rem;
+      font-weight: 800;
+      border-radius: 30px;
+      font-size: 1.04rem;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      transition: background .19s;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+      box-shadow: 0 4px 14px #e8485528;
+    }
+    .btn:hover,
+    .btn:focus {
+      background: #c93043;
+      outline: none;
+    }
     .section-panel {
-      background: #fff;
-      border-radius: 1.1rem;
-      box-shadow: 0 4px 22px rgba(208,2,27,0.07);
-      padding: 1.6rem 2.1rem;
-      margin-bottom: 0;
-      display: flex; flex-direction: column;
+      background: var(--bg-card);
+      padding: 2rem 2.2rem;
+      border-radius: 1.08rem;
+      box-shadow: 0 3px 17px #e8485512;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
     .section-panel h3 {
-      color: #d0021b; font-size: 1.35rem; font-weight: 800;
-      margin-bottom: 0.7rem; letter-spacing: .01em;
+      color: var(--text-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.34rem;
+      letter-spacing: 0.04em;
+      margin: 0 0 0.8rem;
     }
-
     #about p {
-      font-size: 1.11rem; color: #444; line-height: 1.7;
+      color: var(--text-dark);
+      font-size: 1.13rem;
+      line-height: 1.68;
+      font-family: 'Inter', sans-serif;
+      margin-top:0.4rem;
     }
     .about-quote {
       font-weight: 700;
-      color: #d0021b;
-      margin-bottom: .6rem;
-      font-size: 1.09rem;
+      color: var(--accent-red);
+      font-size: 1.04rem;
+      margin-bottom: 0.7rem;
+      font-family: 'Montserrat', sans-serif;
     }
-
-    /* Experience Section - Horizontal Timeline with Cards Above and Dates Below */
+    /* Experience Section */
     .timeline-flexbar {
       display: flex;
       align-items: flex-end;
       justify-content: center;
       gap: 0;
+      margin: 2.1rem 0 0.9rem 0;
       position: relative;
-      margin: 2.1rem 0 0.7rem 0;
     }
     .timeline-item {
       display: flex;
@@ -121,149 +168,195 @@
       align-items: center;
       min-width: 220px;
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
     .timeline-card {
-      background: #fff7f7;
-      border-radius: 1.02em;
-      box-shadow: 0 2px 14px #d0021b17;
-      padding: 1.1em 1em 1.05em 1em;
-      margin-bottom: 29px;
-      min-width: 210px;
-      max-width: 245px;
+      background: #f7f9fa;
+      border-radius: 1em;
+      box-shadow: 0 3px 18px #e8485520;
+      padding: 1em 1em 0.9em 1em;
+      margin-bottom: 25px;
+      min-width: 215px;
+      max-width: 265px;
       text-align: left;
-      color: #222;
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+      font-size:1rem;
     }
     .timeline-role {
-      font-size: 1.07em;
+      font-size: 1.05em;
       font-weight: 800;
-      margin-bottom: .08em;
-      color: #d0021b;
+      margin-bottom: 0.09em;
+      color: var(--accent-red);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing:.01em;
     }
     .timeline-desc {
-      font-size: 1em;
-      color: #333;
+      font-size: .97em;
+      color: #424B54;
+      line-height: 1.34;
+      font-family: 'Inter', sans-serif;
     }
     .timeline-dot {
       display: block;
       width: 26px;
       height: 26px;
-      background: #d0021b;
-      border: 5px solid #fff;
+      background: var(--accent-red);
+      border: 6px solid #fff;
       border-radius: 50%;
-      box-shadow: 0 0 0 7px #d0021b21;
-      margin-bottom: 7px;
-      z-index: 2;
+      box-shadow: 0 0 0 8px #e8485560;
+      margin-bottom: 12px;
+      z-index: 3;
     }
     .timeline-date {
-      font-size: 1em;
-      color: #d0021b;
+      font-size: .99em;
+      color: var(--text-dark);
       font-weight: 700;
       margin-top: 10px;
-      letter-spacing: 0.01em;
+      letter-spacing:0.01em;
+      font-family: 'Montserrat', sans-serif;
     }
     .timeline-separator {
-      width: 120px;
-      height: 6px;
-      background: #d0021b23;
+      width: 115px;
+      height: 7px;
+      background: var(--timeline-line);
       align-self: flex-end;
-      margin-bottom: 38px;
+      margin-bottom: 36px;
       border-radius: 8px;
-      z-index: 1;
+      z-index: 2;
     }
-    @media (max-width: 650px) {
+    @media (max-width: 690px) {
       .timeline-flexbar {
         flex-direction: column;
         align-items: flex-start;
+        gap:0.4rem;
       }
       .timeline-separator {
-        width: 6px; height: 60px; margin: 0 0 0 30px;
+        width: 7px;
+        height: 55px;
+        margin: 0 0 0 30px;
       }
-      .timeline-item {min-width: 90vw; max-width: 95vw;}
-      .timeline-card {min-width: unset; max-width: 95vw;}
+      .timeline-item {
+        min-width: 95vw;
+        max-width: 99vw;
+      }
+      .timeline-card {
+        min-width: unset;
+        max-width: 99vw;
+      }
     }
-
     /* Skills Radar */
     .skills-panel {
-      margin-top: 0;
-      background: #fff;
+      background: var(--bg-card);
     }
     .skills-chart-wrapper {
-      background: #fff7f7;
+      background: #f8f9fa;
       border-radius: 1rem;
-      box-shadow: 0 2px 9px #d0021b15;
-      padding: 1.19rem 0.55rem 1.08rem 0.55rem;
+      box-shadow: 0 2px 9px #e8485510;
+      padding: 1.2rem 0.8rem 1.2rem 0.8rem;
       min-width: 285px;
     }
-    canvas { width: 100% !important; height: 290px !important;}
-
-    /* Projects Grid */
-    .projects-grid { display: flex; gap: 1.16rem; margin-top: 0.19rem; flex-wrap: wrap;}
-    .project-card {
-      background: #fff7f7;
-      border-radius: 1.09rem;
-      box-shadow: 0 2px 9px rgba(208,2,27,0.10);
-      padding: 1rem 1rem 1.1rem 1.1rem;
-      min-width: 210px; max-width: 280px;
-      flex: 1 1 180px;
-      transition: box-shadow 0.2s, transform 0.19s;
-      position: relative;
+    canvas {
+      width: 100% !important;
+      height: 290px !important;
     }
-    .project-card:hover, .project-card:focus-visible {
-      box-shadow: 0 7px 33px #d0021b39;
-      transform: translateY(-4px) scale(1.03); z-index: 2;
+    /* Projects Grid */
+    .projects-grid {
+      display: flex;
+      gap: 1.1rem;
+      margin-top: 0.3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .project-card {
+      background: #f7f9fa;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px #e8485512;
+      padding: 1rem 1.2rem 1.1rem 1.2rem;
+      min-width: 230px;
+      max-width: 315px;
+      flex: 1 1 200px;
+      transition: box-shadow 0.22s, transform 0.22s;
+      position: relative;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+    }
+    .project-card:hover,
+    .project-card:focus-visible {
+      box-shadow: 0 8px 24px #e8485570;
+      transform: translateY(-4px) scale(1.04);
       outline: none;
+      border: 1.4px solid var(--accent-red);
     }
     .project-card h4 {
-      color: #d0021b; font-size: 1.01rem; font-weight: 800; margin-bottom:.16rem;
+      color: var(--accent-red);
+      font-size: 1.07rem;
+      font-weight: 800;
+      margin-bottom: .21em;
+      font-family: 'Montserrat', sans-serif;
     }
-    .project-card p {color: #444; font-size: .97rem; margin:0;}
-
+    .project-card p {
+      color: var(--text-dark);
+      font-size: .97rem;
+      margin: 0;
+      line-height: 1.38;
+      font-family: 'Inter', sans-serif;
+    }
+    .project-card a {
+      color: var(--accent-red);
+      text-decoration: underline;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+    }
+    .project-card a:hover { color: var(--timeline-line);}
     /* Footer Section */
     footer {
-      background: #181818;
+      background: var(--timeline-line);
       text-align: center;
-      padding: 1.28rem 0 2.5rem 0;
-      color: #ed3434;
-      font-size: 1.15rem;
-      font-weight: 900;
-      margin-top: 0;
-      border-radius: 0 0 14px 14px;
-      letter-spacing: .02em;
-      position: relative;
+      padding: 2.2rem 1.5rem 3rem 1.5rem;
+      color: #FDFFF7;
+      font-size: 1.13rem;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 4rem;
+      border-top: 3px solid var(--accent-red);
+      letter-spacing: 0.05em;
     }
     .footer-cta {
-      font-size: 2.12rem;
-      color: #d0021b;
+      font-size: 2.08rem;
       font-weight: 900;
-      letter-spacing: -1px;
-      margin-bottom: 1.3rem;
-      font-family: inherit;
+      margin-bottom: 1.1rem;
+      color: var(--accent-red);
     }
     .footer-links {
-      margin: 0.55rem 0 0.52rem 0; display: flex; justify-content: center; gap:2.8rem; flex-wrap:wrap;
-      font-size:1.06rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.3rem;
+      flex-wrap: wrap;
     }
     .footer-links a {
-      color: #d0021b; text-decoration: none; font-weight: 700;
-      transition: color .19s;
-    }
-    .footer-links a:hover { color: #fff; text-decoration: underline;}
-    .footer-contact {
-      margin: 0.45rem 0 0.72rem 0;
-      color: #fff; font-size: 1.05rem;
+      color: var(--accent-red);
+      text-decoration: none;
       font-weight: 700;
-      text-align: center;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.2s;
     }
-    .footer-contact a, .footer-contact span {
-      color: #fff; text-decoration: none; font-weight: 700;
-      margin-right: 1rem;
-      transition: color .18s;
+    .footer-links a:hover { color: #FDFFF7;}
+    .footer-contact {
+      font-size:1.08rem;
+      font-weight:700;
+      margin-bottom:1.12rem;
+      color: #FDFFF7;
+      font-family: 'Inter', sans-serif;
+      user-select: text;
     }
-    .footer-contact a:hover{ color:#d0021b; text-decoration: underline;}
     .footer-copy {
-      color: #fff; font-size: .99rem; font-weight: 700; margin-top: 1.1rem; letter-spacing: .04em;
-      opacity: 0.52;
+      font-size: .96rem;
+      font-weight: 700;
+      opacity: 0.41;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.02em;
     }
   </style>
 </head>
@@ -288,33 +381,24 @@
       <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact</button>
     </div>
   </section>
-
   <section id="about" tabindex="0" class="section-panel">
     <h3>About Me</h3>
-    <div class="about-quote">
-      “Take a chance, you’ve got nothing to lose.” — Steve Jobs
-    </div>
-    <p>
-      I’m a passionate, data-driven analytics consultant who transforms business impact using cloud data, automation, and visualization. I’ve led payroll migrations, automated analytics workflows, and architected end-to-end insight dashboards for global organizations.
-    </p>
+    <div class="about-quote">“Take a chance, you’ve got nothing to lose.” — Steve Jobs</div>
+    <p>I’m a passionate, data-driven analytics consultant who transforms business impact using cloud data, automation, and visualization. I’ve led payroll migrations, automated analytics workflows, and architected end-to-end insight dashboards for global organizations.</p>
   </section>
-
   <section id="skills" tabindex="0" class="section-panel skills-panel">
     <h3>Technical Skills</h3>
     <div class="skills-chart-wrapper">
       <canvas id="skillsRadar"></canvas>
     </div>
   </section>
-
   <section id="experience" tabindex="0" class="section-panel">
     <h3>Experience</h3>
     <div class="timeline-flexbar">
       <div class="timeline-item">
         <div class="timeline-card">
           <div class="timeline-role">Data Analyst @ ADP</div>
-          <div class="timeline-desc">
-            Led large-scale HR and payroll data migrations for 50K+ employees; delivered $3M+ revenue impact.
-          </div>
+          <div class="timeline-desc">Led large-scale HR and payroll data migrations for 50K+ employees; delivered $3M+ revenue impact.</div>
         </div>
         <span class="timeline-dot"></span>
         <div class="timeline-date">Dec 2022 – Aug 2025</div>
@@ -323,35 +407,31 @@
       <div class="timeline-item">
         <div class="timeline-card">
           <div class="timeline-role">Analytics Consultant @ Stealth</div>
-          <div class="timeline-desc">
-            Architecting cloud-native AWS analytics for loyalty programs and executive dashboards.
-          </div>
+          <div class="timeline-desc">Architecting cloud-native AWS analytics for loyalty programs and executive dashboards.</div>
         </div>
         <span class="timeline-dot"></span>
         <div class="timeline-date">Aug 2025 – Present</div>
       </div>
     </div>
   </section>
-
   <section id="projects" tabindex="0" class="section-panel">
     <h3>Projects</h3>
     <div class="projects-grid">
       <div class="project-card">
-        <h4>Carpooling Website & Android App</h4>
-        <p>Corporate-verified ride sharing platform with email and Aadhaar verification.</p>
+        <h4>End-to-End F1 Race Analysis using Machine Learning</h4>
+        <p><a href="https://github.com/ianvrr/End-to-End_F1_Race_Analysis_using_Machine_Learning" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
       </div>
       <div class="project-card">
-        <h4>Payroll Data Migration Automation</h4>
-        <p>Python automation and GUI tools for validating paygroup totals and migration workflows.</p>
+        <h4>Loan Default Prediction for Credit Risk Mitigation</h4>
+        <p>Machine learning model to predict loan defaults for effective credit risk management.</p>
       </div>
       <div class="project-card">
-        <h4>Loyalty Analytics Dashboards</h4>
-        <p>Architected AWS-native pipelines and dashboards improving revenue and retention.</p>
+        <h4>hydstayin | finding your next PG/Hostel has never been this easy.</h4>
+        <p><a href="https://hydstayin.streamlit.app/?" target="_blank" rel="noopener noreferrer">Live Demo</a></p>
       </div>
     </div>
   </section>
 </main>
-
 <footer id="contact">
   <div class="footer-cta">Let’s Work Together</div>
   <div class="footer-contact">
@@ -366,7 +446,6 @@
   </div>
   <div class="footer-copy">&copy; 2025 Anwar MD. All rights reserved.</div>
 </footer>
-
 <script>
   document.querySelectorAll('nav button').forEach(btn => {
     btn.addEventListener('click', e => {
@@ -394,7 +473,7 @@
     }
     if (!found) document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
   });
-
+  // Skills Radar Chart
   function initRadar() {
     const ctx = document.getElementById('skillsRadar').getContext('2d');
     new Chart(ctx, {
@@ -409,34 +488,33 @@
         datasets: [{
           label: 'Skill Level %',
           data: [90, 85, 80, 75, 70, 65, 80, 70, 85, 80, 70, 60, 70, 65, 75],
-          backgroundColor: 'rgba(208,2,27,0.12)',
-          borderColor: '#d0021b',
-          borderWidth: 2,
-          pointBackgroundColor: '#b3000a',
+          backgroundColor: 'rgba(232,72,85,0.08)',
+          borderColor: '#E84855',
+          borderWidth: 3,
+          pointBackgroundColor: '#E84855',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: '#d0021b',
+          pointHoverBorderColor: '#424B54'
         }]
       },
       options: {
         scales: {
           r: {
-            angleLines: { color: '#d0021b28' },
-            grid: { color: '#d0021b15' },
-            pointLabels: { color: '#d0021b', font: { size: 12.5 } },
+            angleLines: { color: '#E8485590' },
+            grid: { color: '#424B5432' },
+            pointLabels: { color: '#424B54', font: { size: 13, weight: 'bold' } },
             min: 0, max: 100,
-            ticks: { stepSize: 20, color: '#d0021b', showLabelBackdrop: false }
+            ticks: { stepSize: 20, color: '#E84855', showLabelBackdrop: false }
           }
         },
         plugins: {
-          legend: { labels: { color: '#d0021b', font: { size: 14, weight: 'bold' } } }
+          legend: { labels: { color: '#424B54', font: { size: 14, weight: 'bold' } } }
         },
         responsive: true,
         maintainAspectRatio: false,
       }
     });
   }
-
   document.addEventListener('DOMContentLoaded', () => {
     initRadar();
   });
