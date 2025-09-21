@@ -105,6 +105,84 @@
       margin-bottom: .6rem;
       font-size: 1.09rem;
     }
+
+    /* Experience Section - Horizontal Timeline with Cards Above and Dates Below */
+    .timeline-flexbar {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      margin: 2.1rem 0 0.7rem 0;
+    }
+    .timeline-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 220px;
+      position: relative;
+      z-index: 2;
+    }
+    .timeline-card {
+      background: #fff7f7;
+      border-radius: 1.02em;
+      box-shadow: 0 2px 14px #d0021b17;
+      padding: 1.1em 1em 1.05em 1em;
+      margin-bottom: 29px;
+      min-width: 210px;
+      max-width: 245px;
+      text-align: left;
+      color: #222;
+    }
+    .timeline-role {
+      font-size: 1.07em;
+      font-weight: 800;
+      margin-bottom: .08em;
+      color: #d0021b;
+    }
+    .timeline-desc {
+      font-size: 1em;
+      color: #333;
+    }
+    .timeline-dot {
+      display: block;
+      width: 26px;
+      height: 26px;
+      background: #d0021b;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 7px #d0021b21;
+      margin-bottom: 7px;
+      z-index: 2;
+    }
+    .timeline-date {
+      font-size: 1em;
+      color: #d0021b;
+      font-weight: 700;
+      margin-top: 10px;
+      letter-spacing: 0.01em;
+    }
+    .timeline-separator {
+      width: 120px;
+      height: 6px;
+      background: #d0021b23;
+      align-self: flex-end;
+      margin-bottom: 38px;
+      border-radius: 8px;
+      z-index: 1;
+    }
+    @media (max-width: 650px) {
+      .timeline-flexbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .timeline-separator {
+        width: 6px; height: 60px; margin: 0 0 0 30px;
+      }
+      .timeline-item {min-width: 90vw; max-width: 95vw;}
+      .timeline-card {min-width: unset; max-width: 95vw;}
+    }
+
     /* Skills Radar */
     .skills-panel {
       margin-top: 0;
@@ -118,36 +196,7 @@
       min-width: 285px;
     }
     canvas { width: 100% !important; height: 290px !important;}
-    /* Experience Timeline */
-    .timeline {
-      margin-top: 0.4rem;
-      position: relative;
-      display: flex; flex-direction: column;
-      gap: 1.18rem;
-    }
-    .timeline-item {
-      display: flex; align-items: flex-start;
-      gap: 1.0rem;
-    }
-    .timeline-dot {
-      margin-top: 5px;
-      width: 15px; height: 15px; border-radius: 50%;
-      background: #d0021b;
-      border: 2px solid #fff;
-      box-shadow: 0 2px 12px #d0021b41;
-      flex-shrink: 0;
-    }
-    .timeline-content {
-      background: #fff7f7;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px #d0021b11;
-      padding: 0.8rem 1rem 1rem 1.1rem;
-      min-width: 145px; max-width: 320px;
-      font-size: 1rem;
-    }
-    .timeline-content h4 { color: #d0021b; font-weight: 800; font-size: 1.03rem;}
-    .timeline-content .timeline-year {font-weight:700; color:#333;}
-    .timeline-content p {color:#555; margin:0.4rem 0 0;}
+
     /* Projects Grid */
     .projects-grid { display: flex; gap: 1.16rem; margin-top: 0.19rem; flex-wrap: wrap;}
     .project-card {
@@ -169,13 +218,7 @@
       color: #d0021b; font-size: 1.01rem; font-weight: 800; margin-bottom:.16rem;
     }
     .project-card p {color: #444; font-size: .97rem; margin:0;}
-    /* Responsive tweaks */
-    @media (max-width: 830px) {
-      main { padding: 0 0.1rem 2.3rem; max-width: 99vw; }
-      .welcome-section {padding: 1.6rem 0.3rem;}
-      .projects-grid { flex-direction: column; gap: 1rem;}
-      .section-panel {padding: 1rem;}
-    }
+
     /* Footer Section */
     footer {
       background: #181818;
@@ -265,22 +308,27 @@
 
   <section id="experience" tabindex="0" class="section-panel">
     <h3>Experience</h3>
-    <div class="timeline">
+    <div class="timeline-flexbar">
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h4>Data Analyst @ ADP</h4>
-          <div class="timeline-year">2022 - 2024</div>
-          <p>Led large-scale HR and payroll data migrations for 50K+ employees; delivered $3M+ revenue impact.</p>
+        <div class="timeline-card">
+          <div class="timeline-role">Data Analyst @ ADP</div>
+          <div class="timeline-desc">
+            Led large-scale HR and payroll data migrations for 50K+ employees; delivered $3M+ revenue impact.
+          </div>
         </div>
+        <span class="timeline-dot"></span>
+        <div class="timeline-date">Dec 2022 – Aug 2025</div>
       </div>
+      <div class="timeline-separator"></div>
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h4>Analytics Consultant @ Stealth</h4>
-          <div class="timeline-year">2024 - Present</div>
-          <p>Architecting cloud-native AWS analytics for loyalty programs and executive dashboards.</p>
+        <div class="timeline-card">
+          <div class="timeline-role">Analytics Consultant @ Stealth</div>
+          <div class="timeline-desc">
+            Architecting cloud-native AWS analytics for loyalty programs and executive dashboards.
+          </div>
         </div>
+        <span class="timeline-dot"></span>
+        <div class="timeline-date">Aug 2025 – Present</div>
       </div>
     </div>
   </section>
@@ -326,41 +374,41 @@
       const section = document.getElementById(btn.dataset.target);
       if (section) {
         section.scrollIntoView({behavior:'smooth'});
-        document.querySelectorAll('nav button').forEach(btn=>btn.classList.remove('active'));
+        document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
         btn.classList.add('active');
       }
     });
   });
   window.addEventListener('scroll', () => {
     const sections = ['welcome','about','skills','experience','projects','contact'];
-    const scrollPos = window.scrollY + window.innerHeight/3;
+    const scrollPos = window.scrollY + window.innerHeight / 3;
     let found = false;
-    for(let id of sections){
+    for (let id of sections) {
       const sec = document.getElementById(id);
-      if(sec && sec.offsetTop <= scrollPos){
-        document.querySelectorAll('nav button').forEach(btn=>btn.classList.remove('active'));
+      if (sec && sec.offsetTop <= scrollPos) {
+        document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
         const activeBtn = document.querySelector(`nav button[data-target=${id}]`);
-        if(activeBtn) activeBtn.classList.add('active');
+        if (activeBtn) activeBtn.classList.add('active');
         found = true;
       }
     }
-    if(!found) document.querySelectorAll('nav button').forEach(btn=>btn.classList.remove('active'));
+    if (!found) document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
   });
-  // Radar Chart Data/Instance
-  function initRadar(){
+
+  function initRadar() {
     const ctx = document.getElementById('skillsRadar').getContext('2d');
     new Chart(ctx, {
       type: 'radar',
       data: {
-        labels:[
+        labels: [
           'SQL', 'Python', 'AWS Redshift', 'AWS Glue', 'AWS Athena',
           'AWS SageMaker', 'AWS QuickSight', 'Boto3', 'ETL/ELT',
           'PostgreSQL', 'AWS DMS', 'ElastiCache', 'Power BI', 'Looker Studio',
           'Jira & Confluence'
         ],
-        datasets:[{
-          label:'Skill Level %',
-          data: [90,85,80,75,70,65,80,70,85,80,70,60,70,65,75],
+        datasets: [{
+          label: 'Skill Level %',
+          data: [90, 85, 80, 75, 70, 65, 80, 70, 85, 80, 70, 60, 70, 65, 75],
           backgroundColor: 'rgba(208,2,27,0.12)',
           borderColor: '#d0021b',
           borderWidth: 2,
@@ -370,27 +418,28 @@
           pointHoverBorderColor: '#d0021b',
         }]
       },
-      options:{
-        scales:{
-          r:{
-            angleLines: {color: '#d0021b28'},
-            grid: {color: '#d0021b15'},
-            pointLabels: {color: '#d0021b', font: {size:12.5}},
-            min:0, max:100,
-            ticks: {stepSize:20, color:'#d0021b', showLabelBackdrop:false}
+      options: {
+        scales: {
+          r: {
+            angleLines: { color: '#d0021b28' },
+            grid: { color: '#d0021b15' },
+            pointLabels: { color: '#d0021b', font: { size: 12.5 } },
+            min: 0, max: 100,
+            ticks: { stepSize: 20, color: '#d0021b', showLabelBackdrop: false }
           }
         },
-        plugins:{
-          legend:{
-            labels:{color:'#d0021b', font:{size:14, weight:'bold'}}
-          }
+        plugins: {
+          legend: { labels: { color: '#d0021b', font: { size: 14, weight: 'bold' } } }
         },
-        responsive:true,
-        maintainAspectRatio:false,
+        responsive: true,
+        maintainAspectRatio: false,
       }
     });
   }
-  document.addEventListener('DOMContentLoaded', initRadar);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initRadar();
+  });
 </script>
 </body>
 </html>
