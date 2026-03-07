@@ -77,20 +77,50 @@ nav {
   padding: 0 2rem;
 }
 
-/* Updated Aesthetic Signature Logo */
+/* Tech-Inspired Terminal Logo */
 .logo {
-  font-family: 'Caveat', cursive; /* Aesthetic Cursive Font */
+  font-family: 'Inter', sans-serif; 
   font-weight: 700;
-  font-size: 2.2rem;
-  letter-spacing: 1px;
+  font-size: 1.6rem;
   text-decoration: none;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+  letter-spacing: -0.5px;
+}
+
+.logo-bracket {
+  color: var(--text-secondary);
+  font-weight: 300;
+  opacity: 0.5;
+  margin: 0 2px;
   transition: var(--transition);
 }
 
+.logo-accent {
+  color: var(--accent-color);
+}
+
+.logo-cursor {
+  color: var(--accent-color);
+  font-weight: 800;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .logo:hover { 
-  color: var(--accent-color); 
-  transform: scale(1.05);
+  transform: translateY(-1px);
+}
+
+.logo:hover .logo-bracket {
+  color: var(--accent-color);
+  opacity: 1;
 }
 
 .nav-links {
