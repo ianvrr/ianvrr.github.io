@@ -3,7 +3,7 @@
   --surface-color: #FFFFFF;
   --text-primary: #111827;
   --text-secondary: #4B5563;
-  --accent-color: #2563EB; /* Sophisticated Blue */
+  --accent-color: #2563EB; 
   --border-color: #E5E7EB;
   --transition: all 0.3s ease;
 }
@@ -20,6 +20,16 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 /* Typography */
