@@ -1,10 +1,11 @@
 :root {
-  --bg-color: #FAFAFA;
-  --surface-color: #FFFFFF;
-  --text-primary: #111827;
-  --text-secondary: #4B5563;
-  --accent-color: #2563EB; 
-  --border-color: #E5E7EB;
+  /* Dark Theme Palette */
+  --bg-color: #0F172A; /* Deep Slate Background */
+  --surface-color: #1E293B; /* Slightly lighter card background */
+  --text-primary: #F8FAFC; /* Crisp off-white text */
+  --text-secondary: #94A3B8; /* Muted grayish-blue text */
+  --accent-color: #3B82F6; /* Vibrant Blue for links/accents */
+  --border-color: #334155; /* Subtle borders */
   --transition: all 0.3s ease;
 }
 
@@ -60,7 +61,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 42, 0.85); /* Dark background with opacity */
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
@@ -76,15 +77,21 @@ nav {
   padding: 0 2rem;
 }
 
+/* Updated Aesthetic Signature Logo */
 .logo {
-  font-weight: 800;
-  font-size: 1.25rem;
+  font-family: 'Caveat', cursive; /* Aesthetic Cursive Font */
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
   text-decoration: none;
   color: var(--text-primary);
   transition: var(--transition);
 }
 
-.logo:hover { color: var(--accent-color); }
+.logo:hover { 
+  color: var(--accent-color); 
+  transform: scale(1.05);
+}
 
 .nav-links {
   display: flex;
@@ -110,6 +117,7 @@ nav {
   font-size: clamp(3rem, 5vw, 4.5rem);
   margin-bottom: 1.5rem;
   max-width: 850px;
+  color: #FFFFFF;
 }
 
 .hero p {
@@ -120,19 +128,22 @@ nav {
 
 .btn {
   display: inline-block;
-  background: var(--text-primary);
-  color: var(--surface-color);
+  background: var(--accent-color); /* Vibrant button color */
+  color: #FFFFFF; /* Ensure high contrast */
   padding: 1rem 2rem;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: var(--transition);
+  border: 1px solid transparent;
 }
 
 .btn:hover {
-  background: var(--accent-color);
+  background: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.5);
 }
 
 /* Section Headers */
@@ -149,6 +160,7 @@ nav {
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 3rem;
+  color: #FFFFFF;
 }
 
 /* Experience Grid */
@@ -172,6 +184,7 @@ nav {
 .exp-content h3 {
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
+  color: #FFFFFF;
 }
 
 .exp-content h4 {
@@ -181,10 +194,11 @@ nav {
   margin-bottom: 1rem;
 }
 
+/* Updated Metric Highlight for Dark Mode */
 .metric-highlight {
   display: inline-block;
-  background: #EFF6FF; 
-  color: var(--accent-color);
+  background: rgba(59, 130, 246, 0.1); /* Soft glowing blue background */
+  color: #60A5FA; /* Lighter blue for dark mode readability */
   padding: 0.75rem 1rem;
   border-radius: 6px;
   font-weight: 600;
@@ -205,6 +219,7 @@ nav {
   margin-bottom: 1.25rem;
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 0.5rem;
+  color: #FFFFFF;
 }
 
 .skill-list { list-style: none; }
@@ -232,7 +247,7 @@ nav {
 }
 
 .project-card {
-  background: var(--surface-color);
+  background: var(--surface-color); /* Dark card background */
   padding: 2.5rem;
   border-radius: 12px;
   border: 1px solid var(--border-color);
@@ -242,14 +257,15 @@ nav {
 }
 
 .project-card:hover {
-  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); /* Deeper shadow for dark mode */
   transform: translateY(-5px);
-  border-color: #D1D5DB;
+  border-color: var(--accent-color);
 }
 
 .project-card h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
+  color: #FFFFFF;
 }
 
 .project-card p {
@@ -277,7 +293,7 @@ nav {
 /* Footer */
 footer {
   padding: 6rem 0;
-  background: var(--surface-color);
+  background: var(--surface-color); /* Matching the cards */
   text-align: center;
   border-top: 1px solid var(--border-color);
 }
