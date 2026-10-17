@@ -1,167 +1,549 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anwar MD | Senior Analytics Engineer & BI Consultant</title>
-  
-  <meta name="title" content="Anwar MD | Senior Analytics Engineer & BI Consultant">
-  <meta name="description" content="Analytics Engineer specializing in AWS-native data platforms, zero-ETL Redshift architecture, and financial intelligence systems for global ecosystems.">
-  
+  <title>MD Anwar | Analytics & Finance-Intelligence Consultant</title>
+
+  <meta name="title" content="MD Anwar | Analytics & Finance-Intelligence Consultant">
+  <meta name="description" content="I turn large-scale loyalty and finance data into decisions executives can act on - AWS-native BI, reconciliation frameworks, and CFO-grade finance intelligence.">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ianvrr.github.io/">
-  <meta property="og:title" content="Anwar MD | Senior Analytics Engineer & BI Consultant">
-  <meta property="og:description" content="Turning complex data into business velocity through AWS-native data platforms and financial analytics systems.">
+  <meta property="og:title" content="MD Anwar | Analytics & Finance-Intelligence Consultant">
+  <meta property="og:description" content="Turning complex data into decisions the business can act on.">
   <meta property="og:image" content="https://ianvrr.github.io/preview-image.jpg">
-  
+
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://ianvrr.github.io/">
-  <meta property="twitter:title" content="Anwar MD | Senior Analytics Engineer & BI Consultant">
-  <meta property="twitter:description" content="Turning complex data into business velocity through AWS-native data platforms and financial analytics systems.">
+  <meta property="twitter:title" content="MD Anwar | Analytics & Finance-Intelligence Consultant">
+  <meta property="twitter:description" content="Turning complex data into decisions the business can act on.">
   <meta property="twitter:image" content="https://ianvrr.github.io/preview-image.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #F1EFE9;
+      --paper-2: #E9E6DD;
+      --surface: #FBFAF6;
+      --ink: #1C1915;
+      --graphite: #56524B;
+      --mute: #938E84;
+      --faint: #BCB6AA;
+      --line: #DED9CE;
+      --line-soft: #E7E3D9;
+
+      /* Accent — swap these three for a different jewel tone:
+         Pine green:  #1F3D34 / #16302A / rgba(31,61,52,.08)
+         Warm rust:   #B4471F / #923716 / rgba(180,71,31,.08)      */
+      --accent: #7A2E3A;
+      --accent-deep: #5C212B;
+      --accent-soft: rgba(122, 46, 58, 0.08);
+
+      --shadow: 0 30px 60px -32px rgba(28,25,21,0.22), 0 2px 6px rgba(28,25,21,0.04);
+      --ease: cubic-bezier(0.33, 1, 0.68, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--paper);
+      color: var(--graphite);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+    .lenis.lenis-stopped { overflow: hidden; }
+
+    ::selection { background: var(--accent); color: #fff; }
+    a { color: inherit; text-decoration: none; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', Georgia, serif; font-weight: 400;
+      letter-spacing: -0.015em; line-height: 1.08; color: var(--ink);
+      font-optical-sizing: auto;
+    }
+    .fig { font-family: 'IBM Plex Mono', monospace; font-feature-settings: 'tnum' 1; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 2.4rem; }
+    section { position: relative; padding: 8rem 0; z-index: 2; }
+    .rule-top { border-top: 1px solid var(--line); }
+
+    /* kicker — a thin accent rule + quiet sentence-case label (no all-caps, no numbering) */
+    .kicker { display: inline-flex; align-items: center; gap: 0.8rem; margin-bottom: 1.6rem; font-size: 0.9rem; color: var(--mute); font-weight: 500; }
+    .kicker::before { content: ''; width: 26px; height: 1.5px; background: var(--accent); }
+
+    .s-title { font-size: clamp(2.1rem, 4.6vw, 3.1rem); color: var(--ink); max-width: 18ch; margin-bottom: 3rem; text-wrap: balance; }
+
+    /* ---------- NAV ---------- */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(241, 239, 233, 0.78);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      z-index: 1000; padding: 1.3rem 0;
+      transition: padding 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease), transform 0.45s var(--ease);
+    }
+    nav.scrolled { padding: 0.95rem 0; border-color: var(--line-soft); }
+    nav.hidden { transform: translateY(-105%); }
+    .nav-content { display: flex; justify-content: space-between; align-items: center; max-width: 1120px; margin: 0 auto; padding: 0 2.4rem; }
+    .logo { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.5rem; color: var(--ink); letter-spacing: -0.02em; display: inline-flex; align-items: baseline; }
+    .logo .dot { color: var(--accent); transition: transform 0.4s var(--ease); display: inline-block; }
+    .logo:hover .dot { transform: translateX(3px) scale(1.15); }
+    .nav-links { display: flex; gap: 2.4rem; }
+    .nav-links a { color: var(--graphite); font-size: 0.92rem; font-weight: 500; position: relative; transition: color 0.3s var(--ease); }
+    .nav-links a::after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 1.5px; background: var(--accent); transition: width 0.35s var(--ease); }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-links a.active::after { width: 100%; }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      --b: var(--ink);
+      position: relative; display: inline-flex; align-items: center; justify-content: center;
+      padding: 1rem 2.2rem; border-radius: 2px; font-weight: 500; font-size: 0.95rem;
+      color: var(--paper); background: var(--b); border: 1px solid var(--b); overflow: hidden;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); will-change: transform; isolation: isolate;
+    }
+    .btn > span { position: relative; z-index: 2; transition: color 0.4s var(--ease); }
+    .btn::before {
+      content: ''; position: absolute; inset: 0; z-index: 1; background: var(--accent);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.45s var(--ease);
+    }
+    .btn:hover { box-shadow: 0 16px 30px -14px var(--accent-soft); }
+    .btn:hover::before { transform: scaleX(1); }
+    .btn:hover > span { color: #fff; }
+    .btn-ghost { --b: transparent; color: var(--ink); border-color: var(--line); }
+    .btn-ghost::before { background: var(--ink); }
+    .btn-ghost:hover { border-color: var(--ink); }
+    .btn-ghost:hover > span { color: var(--paper); }
+
+    /* ---------- HERO ---------- */
+    #vanta-bg { position: absolute; inset: 0; z-index: 0; opacity: 0.5; }
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 9rem 0 5rem; overflow: hidden; }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: radial-gradient(130% 90% at 75% 20%, transparent 40%, var(--paper) 82%);
+    }
+    .hero .container { position: relative; z-index: 3; }
+    .hero h1 { font-size: clamp(2.9rem, 6.6vw, 5.4rem); max-width: 20ch; margin-bottom: 2.2rem; line-height: 1.1; text-wrap: balance; }
+    .hero h1 .w { display: inline-block; }
+    .hero h1 .ln { display: block; overflow: hidden; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+    .hero h1 .ln > span { display: block; }
+    .hero .lead { font-size: clamp(1.1rem, 1.9vw, 1.3rem); max-width: 54ch; margin-bottom: 2.8rem; color: var(--graphite); line-height: 1.7; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-meta { margin-top: 3.5rem; display: flex; gap: 2.4rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--mute); }
+    .hero-meta b { color: var(--ink); font-weight: 500; }
+
+    .scroll-hint { position: absolute; bottom: 2rem; left: 2.4rem; z-index: 3; font-size: 0.78rem; color: var(--mute); display: flex; align-items: center; gap: 0.7rem; }
+    .scroll-hint .ln { width: 46px; height: 1px; background: var(--faint); overflow: hidden; position: relative; }
+    .scroll-hint .ln::after { content: ''; position: absolute; inset: 0; background: var(--accent); transform: translateX(-100%); animation: sweep 2.4s var(--ease) infinite; }
+    @keyframes sweep { 0%{transform:translateX(-100%);} 55%{transform:translateX(0);} 100%{transform:translateX(100%);} }
+
+    /* ---------- IMPACT STRIP ---------- */
+    .impact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
+    .stat { border-top: 1.5px solid var(--ink); padding-top: 1.1rem; }
+    .stat .num { font-family: 'Fraunces', serif; font-size: clamp(2.1rem, 3.7vw, 3rem); font-weight: 400; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
+    .stat .num .u { color: var(--accent); }
+    .stat .label { margin-top: 0.85rem; font-size: 0.86rem; color: var(--mute); line-height: 1.5; }
+
+    /* ---------- SPOTLIGHT ---------- */
+    .spotlight { background: var(--paper-2); }
+    .spotlight-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 4.5rem; align-items: center; }
+    .spotlight .copy p { margin-bottom: 1.3rem; font-size: 1.05rem; line-height: 1.7; }
+    .spotlight .copy strong { color: var(--ink); font-weight: 600; }
+    .badges { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.55rem; background: var(--surface); border: 1px solid var(--line); border-radius: 2px; padding: 0.55rem 1rem; font-size: 0.82rem; color: var(--ink); font-weight: 500; }
+    .badge .mk { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    .chart-card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 2rem 2rem 1.6rem; box-shadow: var(--shadow); }
+    .chart-title { font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--ink); line-height: 1.25; margin-bottom: 0.35rem; }
+    .chart-sub { font-size: 0.82rem; color: var(--mute); margin-bottom: 1.4rem; }
+    .runtime-chart { width: 100%; height: auto; display: block; overflow: visible; }
+    .runtime-chart .bar-val { font-family: 'IBM Plex Mono', monospace; font-size: 12px; fill: var(--ink); font-weight: 500; }
+    .runtime-chart .bar-val.now { fill: var(--accent); }
+    .runtime-chart .bar-stage { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--graphite); font-weight: 600; }
+    .runtime-chart .bar-cap { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; fill: var(--mute); }
+    .runtime-chart .axis { stroke: var(--line); stroke-width: 1; }
+    .chart-foot { display: flex; gap: 1.4rem; margin-top: 1.3rem; padding-top: 1rem; border-top: 1px solid var(--line-soft); font-size: 0.8rem; color: var(--mute); flex-wrap: wrap; }
+    .chart-foot b { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
+
+    /* ---------- ABOUT ---------- */
+    .about-text { max-width: 60ch; }
+    .about-text p { margin-bottom: 1.5rem; font-size: clamp(1.1rem, 1.7vw, 1.3rem); color: var(--ink); line-height: 1.65; font-family: 'Fraunces', serif; font-weight: 400; }
+    .about-text p.sub { font-family: 'Inter', sans-serif; font-size: 1.02rem; color: var(--graphite); line-height: 1.7; }
+    .about-text strong { color: var(--ink); font-weight: 600; }
+    .about-text em { font-style: italic; }
+
+    /* ---------- EXPERIENCE (ledger rows) ---------- */
+    .xp { display: grid; grid-template-columns: 0.8fr 2.2fr; gap: 2.5rem; padding: 2.8rem 0; border-top: 1px solid var(--line); }
+    .xp:first-of-type { border-top: 1.5px solid var(--ink); }
+    .xp-when { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--mute); line-height: 1.7; padding-top: 0.4rem; }
+    .xp h3 { font-size: 1.55rem; color: var(--ink); margin-bottom: 0.2rem; }
+    .xp .org { font-size: 1rem; color: var(--accent); font-weight: 600; margin-bottom: 1.2rem; }
+    .xp > div > p { font-size: 0.98rem; margin-bottom: 1rem; color: var(--graphite); }
+    .xp ul { list-style: none; }
+    .xp li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; font-size: 0.96rem; color: var(--graphite); line-height: 1.6; }
+    .xp li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 7px; height: 1.5px; background: var(--accent); }
+    .xp li strong { color: var(--ink); font-weight: 600; }
+    .recog { font-size: 0.98rem; color: var(--graphite); line-height: 1.9; }
+    .recog b { color: var(--ink); font-weight: 600; }
+
+    /* ---------- CAPABILITIES (columns, not cards) ---------- */
+    .caps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
+    .cap { border-top: 1px solid var(--line); padding-top: 1.1rem; }
+    .cap h4 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 0.02em; color: var(--mute); font-weight: 600; margin-bottom: 1.1rem; }
+    .cap ul { list-style: none; }
+    .cap li { font-size: 0.95rem; color: var(--ink); padding: 0.5rem 0; border-bottom: 1px solid var(--line-soft); }
+    .cap li:last-child { border-bottom: none; }
+
+    /* ---------- WORK (horizontal gallery) ---------- */
+    .hwrap { padding: 0; overflow-x: auto; overflow-y: hidden; min-height: 100vh; display: flex; align-items: center; }
+    .hwrap::-webkit-scrollbar { height: 0; }
+    .htrack { display: flex; align-items: stretch; gap: 2rem; padding: 4rem 2.4rem; width: max-content; }
+    .hpanel { flex: 0 0 auto; width: 460px; display: flex; flex-direction: column; }
+    .hpanel.intro { width: 380px; justify-content: center; }
+    .hpanel.intro .s-title { margin-bottom: 1.2rem; }
+    .hpanel.intro p { font-size: 1rem; color: var(--graphite); max-width: 34ch; }
+    .case { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 2.4rem; height: 100%; display: flex; flex-direction: column; transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+    .case:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+    .case .cat { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--accent); margin-bottom: 1.4rem; letter-spacing: 0.02em; }
+    .case h3 { font-size: 1.5rem; color: var(--ink); margin-bottom: 1rem; }
+    .case p { font-size: 0.95rem; color: var(--graphite); line-height: 1.65; margin-bottom: 1.4rem; flex-grow: 1; }
+    .case .arch { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; color: var(--faint); line-height: 1.6; margin-bottom: 1.4rem; }
+    .case .go { font-size: 0.86rem; font-weight: 600; color: var(--accent); align-self: flex-start; position: relative; padding-bottom: 2px; }
+    .case a.go::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1.5px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.35s var(--ease); }
+    .case a.go:hover::after { transform: scaleX(1); }
+    .case .go.static { color: var(--mute); }
+    .hscroll-note { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--faint); margin-top: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
+    .hscroll-note .ar { color: var(--accent); }
+
+    /* ---------- FOOTER ---------- */
+    footer { background: var(--ink); color: var(--paper); text-align: center; padding: 8rem 0 4rem; position: relative; z-index: 2; }
+    footer h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--surface); margin-bottom: 1.3rem; text-wrap: balance; }
+    footer h2 em { font-style: italic; color: #D99AA4; }
+    footer .sub { color: rgba(241,239,233,0.65); font-size: 1.08rem; margin-bottom: 2.6rem; }
+    footer .btn { --b: var(--paper); color: var(--ink); }
+    footer .btn::before { background: var(--accent); }
+    footer .btn:hover > span { color: #fff; }
+    .footer-links { display: flex; justify-content: center; gap: 2.4rem; margin: 3.5rem 0 2.5rem; flex-wrap: wrap; }
+    .footer-links a { color: rgba(241,239,233,0.6); font-size: 0.9rem; font-weight: 500; transition: color 0.3s var(--ease); }
+    .footer-links a:hover { color: #D99AA4; }
+    .copyright { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: rgba(241,239,233,0.38); }
+
+    /* ---------- REVEAL ---------- */
+    .reveal { opacity: 0; transform: translateY(22px); }
+    .reveal.in { opacity: 1; transform: none; transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .spotlight-grid { grid-template-columns: 1fr; gap: 2.8rem; }
+      .caps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .hwrap { min-height: auto; display: block; overflow: visible; }
+      .htrack { flex-direction: column; width: auto; padding: 5rem 0; gap: 1.5rem; }
+      .hpanel, .hpanel.intro { width: 100%; }
+      .hscroll-note { display: none; }
+    }
+    @media (max-width: 760px) {
+      .container { padding: 0 1.5rem; }
+      section { padding: 5.5rem 0; }
+      .nav-links { display: none; }
+      .nav-content { padding: 0 1.5rem; }
+      .hero { padding: 8rem 0 4rem; min-height: auto; }
+      .scroll-hint { display: none; }
+      .impact { grid-template-columns: repeat(2, 1fr); gap: 2.2rem; }
+      .xp { grid-template-columns: 1fr; gap: 0.8rem; }
+      .hero-cta { width: 100%; }
+      .btn { flex: 1; }
+      .footer-links { flex-direction: column; gap: 1.3rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <nav>
+  <nav id="nav">
     <div class="nav-content">
-      <a href="#" class="logo">
-        <span class="logo-bracket">[</span>anwar<span class="logo-accent">.md</span><span class="logo-bracket">]</span><span class="logo-cursor">_</span>
-      </a>
+      <a href="#home" class="logo">Anwar<span class="dot">.</span></a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#capabilities">Capabilities</a>
-        <a href="#projects">Projects</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <main class="container fade-in">
+  <main>
+    <!-- HERO -->
     <section class="hero" id="home">
-      <span class="section-header" style="margin-bottom: 1.5rem;">Senior Analytics Engineer & BI Consultant</span>
-      <h1>Turning complex data into business velocity.</h1>
-      <p>Analytics Engineer specializing in AWS-native data platforms and financial intelligence systems for global ecosystems. I bridge the gap between heavy technical infrastructure and C-suite strategy.</p>
-      <a href="mailto:anwarmahammad@hotmail.com" class="btn">Let's Talk Strategy</a>
-    </section>
-
-    <section id="about">
-      <span class="section-header">01. Philosophy</span>
-      <h2 class="section-title">Beyond the dashboards.</h2>
-      <div style="max-width: 700px; font-size: 1.1rem;">
-        <p style="margin-bottom: 1.5rem;">Data without a narrative is just noise. Operating at the intersection of Data Engineering and Analytics, my bandwidth is split right down the middle: 50% architecting heavy backend AWS pipelines and automating processes, and 50% driving client-facing BI strategy.</p>
-        <p>I specialize in near real-time OLTP to OLAP architecture (RDS to Redshift), reconciliation frameworks, KPI engineering, and cost optimization. I currently architect analytics infrastructure for global loyalty programs across airlines, hospitality, and retail - delivering impactful solutions for the world's largest airlines, top-tier global hospitality alliances, and premier retail conglomerates.</p>
-      </div>
-    </section>
-
-    <section id="experience">
-      <span class="section-header">02. Leadership & Impact</span>
-      <h2 class="section-title">Professional Experience</h2>
-
-      <div class="experience-item">
-        <div class="exp-meta">Aug 2025 – Present</div>
-        <div class="exp-content">
-          <h3>Analytics Engineer (BI Specialist)</h3>
-          <h4>Loyalty Juggernaut</h4>
-          <p>Led end-to-end design and delivery of strategic analytics and finance intelligence solutions for global loyalty ecosystems across airlines, hospitality, retail, and telecom. Architected near real-time RDS (PostgreSQL) to Redshift pipelines using AWS DMS and zero-ETL patterns.</p>
-          <div class="metric-highlight">Delivered $500K+ cumulative savings through stepped-model reimbursement automation and Cost-Per-Point (CPP) optimization.</div>
+      <div id="vanta-bg"></div>
+      <div class="container">
+        <span class="kicker">Analytics &amp; finance-intelligence consultant</span>
+        <h1 id="hero-title">Turning complex data into decisions the business can act on.</h1>
+        <p class="lead reveal">I work where large-scale AWS data infrastructure meets executive strategy - building BI, reconciliation frameworks, and CFO-grade finance intelligence for global loyalty programs across airline, hospitality, retail, and banking.</p>
+        <div class="hero-cta reveal">
+          <a href="mailto:anwarmahammad@hotmail.com" class="btn magnet"><span>Let's talk strategy</span></a>
+          <a href="#work" class="btn btn-ghost magnet"><span>View selected work</span></a>
+        </div>
+        <div class="hero-meta reveal">
+          <span><b>4+ years</b> in data &amp; analytics</span>
+          <span><b>13</b> enterprise clients</span>
+          <span><b>Hyderabad</b>, open to Bengaluru</span>
         </div>
       </div>
+      <div class="scroll-hint"><span class="ln"></span><span>Scroll</span></div>
+    </section>
 
-      <div class="experience-item">
-        <div class="exp-meta">Dec 2022 – Aug 2025</div>
-        <div class="exp-content">
-          <h3>Data Engineer - Product Implementation</h3>
-          <h4>ADP</h4>
-          <p>Spearheaded end-to-end migration of HR and payroll data from 10+ legacy systems to modern platforms for Fortune 500 clients, collaborating directly with C-suite stakeholders to ensure seamless business continuity. Migrated and validated data for over 1,000,000 associates, and initiated a Google Document AI solution on GCP for multi-source data extraction.</p>
-          <div class="metric-highlight">Engineered SQL/Python automation reducing 200+ manual hours per project, accelerating delivery timelines by 30%.</div>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-meta">Jul 2023 – Jul 2024</div>
-        <div class="exp-content">
-          <h3>Vice President of Public Relations</h3>
-          <h4>Toastmasters International (ADP)</h4>
-          <p>Directed communication strategy, brand positioning, and stakeholder engagement initiatives. Orchestrated a digital turnaround that transformed the organization's presence from near-zero to the highest-ranking club across the division.</p>
-          <div class="metric-highlight" style="background: rgba(148, 163, 184, 0.1); color: #E2E8F0; border-left-color: #94A3B8; box-shadow: inset 0 0 15px rgba(148, 163, 184, 0.05);">
-            Achieved #1 club ranking in Division F, District 126 through strategic growth initiatives.
+    <!-- IMPACT -->
+    <section id="impact-strip" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="impact">
+          <div class="stat reveal">
+            <div class="num fig"><span class="count" data-to="85.5" data-dec="1">0</span><span class="u">M</span></div>
+            <div class="label">MXN breakage revenue surfaced from a 6-month data-integrity gap</div>
+          </div>
+          <div class="stat reveal">
+            <div class="num fig"><span class="count" data-to="100">0</span><span class="u">%</span></div>
+            <div class="label">Daily reconciliation accuracy, 0 missing records - years-long escalation closed</div>
+          </div>
+          <div class="stat reveal">
+            <div class="num fig"><span class="count" data-to="250">0</span><span class="u">+</span></div>
+            <div class="label">Dashboards built &amp; maintained across 13 enterprise clients</div>
+          </div>
+          <div class="stat reveal">
+            <div class="num fig"><span class="count" data-to="13">0</span><span class="u">M+</span></div>
+            <div class="label">Members segmented weekly into behavioral groups</div>
           </div>
         </div>
       </div>
-      
-      <div class="experience-item" style="margin-top: 2rem;">
-        <div class="exp-meta">Awards & Honors</div>
-        <div class="exp-content">
-          <p style="color: var(--text-primary); font-weight: 500;">
-            🏆 Earned 34+ ADP MyMoments awards and 10+ NAS Emerging Force Awards for outstanding project delivery, innovation, and client satisfaction. <br>
-            🎓 Recognized as Best Outgoing Student (B.Tech ME Batch of 2022).
-          </p>
+    </section>
+
+    <!-- SPOTLIGHT -->
+    <section class="spotlight" id="spotlight">
+      <div class="container">
+        <span class="kicker reveal">Engineering spotlight</span>
+        <h2 class="s-title reveal">Re-engineering a reimbursement algorithm the client had lived with for years.</h2>
+        <div class="spotlight-grid">
+          <div class="copy">
+            <p class="reveal">The stepped-model reimbursement algorithm for the <strong>world's largest hotel alliance</strong> was the client's longest-standing pain point - two pipelines, each running <strong>12-14 hours</strong>, with recurring discrepancies between the detailed and summary exports.</p>
+            <p class="reveal">I rebuilt it around a <strong>single gold core table</strong>. Query optimization first brought each run down to 2.5-3 hours; consolidating the two pipelines into one table that feeds both exports then cut it to <strong>~2 hours</strong> - roughly 6&times; faster per run, the duplicate run gone, and export-level diffs resolved at the source.</p>
+            <div class="badges reveal">
+              <span class="badge"><span class="mk"></span> Juggernaut of the Month, Aug 2026</span>
+              <span class="badge"><span class="mk"></span> CEO commendation</span>
+            </div>
+          </div>
+
+          <div class="chart-card reveal">
+            <div class="chart-title">Down to one table - and ~6&times; less compute a day.</div>
+            <div class="chart-sub">Total daily runtime of the reimbursement algorithm</div>
+            <svg class="runtime-chart" viewBox="0 0 440 232" role="img" aria-label="Daily runtime fell from about 26 hours to about 2 hours after consolidating two pipelines into one table">
+              <line class="axis" x1="20" y1="176" x2="430" y2="176"></line>
+              <rect class="rt-bar" data-h="150" data-y="26"  x="46"  y="176" width="70" height="0" rx="2" fill="#CDC7BB"></rect>
+              <rect class="rt-bar" data-h="32"  data-y="144" x="186" y="176" width="70" height="0" rx="2" fill="#CDC7BB"></rect>
+              <rect class="rt-bar" data-h="12"  data-y="164" x="326" y="176" width="70" height="0" rx="2" fill="#7A2E3A"></rect>
+              <text class="rt-val bar-val"     x="81"  y="18"  text-anchor="middle" opacity="0">~26h</text>
+              <text class="rt-val bar-val"     x="221" y="136" text-anchor="middle" opacity="0">~5.5h</text>
+              <text class="rt-val bar-val now" x="361" y="156" text-anchor="middle" opacity="0">~2h</text>
+              <text class="bar-stage" x="81"  y="198" text-anchor="middle">Legacy</text>
+              <text class="bar-stage" x="221" y="198" text-anchor="middle">Jun 2026</text>
+              <text class="bar-stage" x="361" y="198" text-anchor="middle">Now</text>
+              <text class="bar-cap" x="81"  y="214" text-anchor="middle">12-14h &#215; 2 runs</text>
+              <text class="bar-cap" x="221" y="214" text-anchor="middle">2.5-3h &#215; 2 runs</text>
+              <text class="bar-cap" x="361" y="214" text-anchor="middle">~2h &#215; 1 table</text>
+            </svg>
+            <div class="chart-foot">
+              <span>Runtime <b>~6&times; lower</b></span>
+              <span>Pipelines <b>2 &rarr; 1</b></span>
+              <span>Export diffs <b>resolved</b></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="capabilities">
-      <span class="section-header">03. Technical Arsenal</span>
-      <h2 class="section-title">Core Competencies</h2>
-      
-      <div class="skills-grid" style="margin-top: 3rem;">
-        <div class="skill-category">
-          <h4>Cloud & Architecture</h4>
-          <ul class="skill-list">
-            <li>AWS Redshift, Glue, DMS & Athena</li>
-            <li>Zero-ETL Patterns & Incremental Loading</li>
-            <li>AWS SageMaker & S3</li>
-            <li>ElastiCache (Redis)</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Data Engineering</h4>
-          <ul class="skill-list">
-            <li>Advanced SQL & Python</li>
-            <li>Airflow Orchestration</li>
-            <li>ETL / ELT Pipelines</li>
-            <li>PostgreSQL (RDS)</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Business Intelligence</h4>
-          <ul class="skill-list">
-            <li>AWS QuickSight & Power BI</li>
-            <li>Metric Layer Design</li>
-            <li>Finance Intelligence Systems</li>
-            <li>A/B Testing & KPI Engineering</li>
-          </ul>
+    <!-- ABOUT -->
+    <section id="about" class="rule-top">
+      <div class="container">
+        <span class="kicker reveal">How I work</span>
+        <div class="about-text">
+          <p class="reveal">Data without a narrative is just noise. I split my time between architecting AWS pipelines and automating reconciliation, and driving the client-facing BI and finance strategy that sits on top of them.</p>
+          <p class="reveal">Today I own BI and the enterprise data warehouse for the <strong>world's largest hotel alliance</strong> and a <strong>major North American airline</strong>, and I've co-delivered loyalty diagnostics for a <strong>leading Indian hospitality group</strong>.</p>
+          <p class="sub reveal">The through-line across all of it: taking BI one step further - from <em>showing</em> the data to <em>understanding</em> it and advising on what to do next. Near real-time OLTP-to-OLAP architecture, reconciliation and data-quality frameworks, KPI engineering, segmentation, and cost optimization.</p>
         </div>
       </div>
     </section>
 
-    <section id="projects">
-      <span class="section-header">04. Case Studies</span>
-      <h2 class="section-title">Selected Projects</h2>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="rule-top">
+      <div class="container">
+        <span class="kicker reveal">Experience</span>
+        <h2 class="s-title reveal">Where I've delivered.</h2>
 
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Enterprise Finance Intelligence System</h3>
-          <p>Architected a near real-time PostgreSQL to Redshift data pipeline using AWS DMS and zero-ETL patterns for a global loyalty ecosystem.</p>
-          <p style="font-size: 0.85rem; margin-top: -1.5rem; color: var(--text-secondary);"><strong>Architecture:</strong> RDS → AWS DMS → S3 → Redshift → Airflow → QuickSight</p>
-          <span class="project-link" style="color: var(--text-secondary); border-color: transparent; cursor: default;">Enterprise Architecture</span>
+        <div class="xp reveal">
+          <div class="xp-when">Aug 2025<br>Present<br>Hyderabad</div>
+          <div>
+            <h3>Business Intelligence Specialist (AWS)</h3>
+            <div class="org">Loyalty Juggernaut</div>
+            <p>Own BI and the enterprise data warehouse for two flagship global loyalty programs, and deliver analytics, finance intelligence, and reconciliation across airline, hospitality, retail, and banking ecosystems.</p>
+            <ul>
+              <li>Rebuilt the stepped-model reimbursement algorithm around a <strong>single gold core table</strong>, cutting runtime from 12-14 hours to <strong>~2 hours (~6&times; faster)</strong> and removing a duplicate pipeline - earning <strong>Juggernaut of the Month (Aug 2026)</strong> and a CEO commendation for closing the client's #1 long-standing pain point.</li>
+              <li>Surfaced <strong>~85.5M MXN</strong> in under-reported breakage by root-causing a 6-month data-integrity gap, and validated a core points engine to <strong>99.84%</strong> accuracy - catching a real defect.</li>
+              <li>Re-architected billing-critical reconciliation to <strong>100% daily accuracy</strong> with 0 missing records and proactive alerting, closing a years-long escalation.</li>
+              <li>Build and maintain <strong>250+ dashboards across 13 clients</strong>; audited 2.49M profiles and segment 13M+ members weekly.</li>
+              <li>Helped build <strong>Fidivio</strong>, a CFO-facing finance product, writing the Redshift SQL behind its API payloads - live with its first client. Mentored 5 new joiners.</li>
+            </ul>
+          </div>
         </div>
-        
-        <div class="project-card">
-          <h3>F1 Race Analysis</h3>
-          <p>An end-to-end Python and FastF1 machine learning pipeline analyzing historical Formula 1 telemetry data to surface strategic pit-stop and performance insights across the 2023 season.</p>
-          <a href="https://github.com/ianvrr/End-to-End_F1_Race_Analysis_using_Machine_Learning" target="_blank" class="project-link">View Repository</a>
+
+        <div class="xp reveal">
+          <div class="xp-when">Dec 2022<br>Aug 2025<br>Hyderabad</div>
+          <div>
+            <h3>Data Engineer - Product Implementation</h3>
+            <div class="org">ADP, National Account Services</div>
+            <p>Led end-to-end migration of HR and payroll data from legacy systems to ADP HCM platforms for Fortune 500 and large-enterprise clients across financial services, automotive, insurance, and government.</p>
+            <ul>
+              <li>Delivered <strong>10+ enterprise migrations</strong>, validating <strong>1M+ associate records</strong> at 100% data integrity, partnering with C-suite, CFOs, and payroll leaders.</li>
+              <li>Engineered a SQL/Python automation tool that cut <strong>200+ manual hours per project</strong>; reusable scripts accelerated delivery by ~30%.</li>
+              <li>Served as <strong>Monarch SME</strong> across 20+ systems of record; initiated a Google Document AI (GCP) project for multi-source extraction.</li>
+            </ul>
+          </div>
         </div>
-        
-        <div class="project-card">
-          <h3>Credit Risk Mitigation</h3>
-          <p>Developed a predictive logistic regression model using SMOTE and threshold tuning to forecast loan defaults across 350K+ records, allowing institutions to proactively manage NPA risks.</p>
-          <span class="project-link" style="color: var(--text-secondary); border-color: transparent; cursor: default;">Proprietary Model</span>
+
+        <div class="xp reveal">
+          <div class="xp-when">Jul 2023<br>Jul 2024</div>
+          <div>
+            <h3>VP, Public Relations</h3>
+            <div class="org">ADP Hyderabad Toastmasters Club</div>
+            <p>Directed communication strategy and brand positioning, growing the club's online presence from near-zero to the <strong>#1 club in Division F, District 126</strong>.</p>
+          </div>
+        </div>
+
+        <div class="xp reveal">
+          <div class="xp-when">Recognition</div>
+          <div>
+            <p class="recog"><b>Juggernaut of the Month</b> (Aug 2026) &nbsp;·&nbsp; CEO commendation &nbsp;·&nbsp; <b>34</b> ADP MyMoment awards &nbsp;·&nbsp; <b>10+</b> NAS Emerging Force recognitions &nbsp;·&nbsp; Best Outgoing Student, Mechanical Engineering (2022).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section id="capabilities" class="rule-top">
+      <div class="container">
+        <span class="kicker reveal">Toolkit</span>
+        <h2 class="s-title reveal">What I build with.</h2>
+        <div class="caps">
+          <div class="cap reveal">
+            <h4>Cloud &amp; data</h4>
+            <ul>
+              <li>Redshift, Athena, Glue</li>
+              <li>DMS, S3, RDS (PostgreSQL)</li>
+              <li>DynamoDB, SageMaker</li>
+              <li>Oracle SQL / Oracle DB</li>
+            </ul>
+          </div>
+          <div class="cap reveal">
+            <h4>Engineering</h4>
+            <ul>
+              <li>Advanced SQL &amp; tuning</li>
+              <li>Python (pandas, NumPy)</li>
+              <li>Airflow, Boto3, AWS CLI</li>
+              <li>EventBridge / Lambda / SNS</li>
+            </ul>
+          </div>
+          <div class="cap reveal">
+            <h4>BI &amp; analytics</h4>
+            <ul>
+              <li>QuickSight, Power BI</li>
+              <li>KPI &amp; metric design</li>
+              <li>RFM / segmentation</li>
+              <li>Fraud &amp; anomaly detection</li>
+            </ul>
+          </div>
+          <div class="cap reveal">
+            <h4>Domain</h4>
+            <ul>
+              <li>Loyalty analytics (LPM)</li>
+              <li>Finance intelligence</li>
+              <li>Forecasting &amp; sizing</li>
+              <li>Reconciliation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK (horizontal gallery) -->
+    <section id="work" class="hwrap rule-top">
+      <div class="htrack" id="htrack">
+        <div class="hpanel intro">
+          <span class="kicker">Selected work</span>
+          <h2 class="s-title">Five problems, solved at scale.</h2>
+          <p>From finance products to loyalty diagnostics and risk models.</p>
+          <div class="hscroll-note"><span class="ar">&rarr;</span> Scroll to move across</div>
+        </div>
+
+        <div class="hpanel">
+          <div class="case">
+            <div class="cat">Finance product, SQL</div>
+            <h3>Fidivio - CFO finance intelligence</h3>
+            <p>Helped build a live finance product for loyalty programs from zero to one, writing the Redshift SQL behind its API payloads - accruals, CPP, yield, breakage, adjusted EBITDA, budget variance. Diagnosed and fixed period-comparison and EBITDA reconciliation defects, validating to 8-decimal parity against a reference model.</p>
+            <div class="arch">Redshift · query templates · SQL-vs-Excel reconciliation</div>
+            <span class="go static">Live with first client</span>
+          </div>
+        </div>
+
+        <div class="hpanel">
+          <div class="case">
+            <div class="cat">Loyalty diagnostics, LPM</div>
+            <h3>Loyalty program diagnostics</h3>
+            <p>Co-delivered consultative diagnostics for the world's largest hotel alliance (3.26M active members) - sizing a $2.07B inactivity gap and identifying 140K high-value lapsed members ($438M) for targeted win-back. Applied the same framework to a leading Indian hospitality group, surfacing that multi-property members spend ~2.5&times; more.</p>
+            <div class="arch">RFM · value concentration · churn economics</div>
+            <span class="go static">Confidential engagement</span>
+          </div>
+        </div>
+
+        <div class="hpanel">
+          <div class="case">
+            <div class="cat">Reconciliation, data quality</div>
+            <h3>Enterprise reconciliation framework</h3>
+            <p>Re-architected billing-critical reconciliation for a global loyalty program to 100% daily accuracy with proactive failure alerting, closing a years-long escalation. Audited 2.49M profiles and surfaced ~85.5M MXN of under-reported revenue from a root-caused integrity gap.</p>
+            <div class="arch">RDS → DMS → S3 → Redshift · EventBridge → Lambda → SNS</div>
+            <span class="go static">Enterprise architecture</span>
+          </div>
+        </div>
+
+        <div class="hpanel">
+          <div class="case">
+            <div class="cat">Machine learning, Python</div>
+            <h3>F1 race analysis pipeline</h3>
+            <p>An end-to-end Python and FastF1 machine-learning pipeline analyzing historical Formula 1 telemetry to surface strategic pit-stop and performance insights across the 2023 season.</p>
+            <div class="arch">Python · FastF1 · scikit-learn · telemetry</div>
+            <a href="https://github.com/ianvrr/End-to-End_F1_Race_Analysis_using_Machine_Learning" target="_blank" rel="noopener" class="go">View repository</a>
+          </div>
+        </div>
+
+        <div class="hpanel">
+          <div class="case">
+            <div class="cat">Risk modeling, Python</div>
+            <h3>Credit risk mitigation model</h3>
+            <p>A predictive logistic-regression model using SMOTE and threshold tuning to forecast loan defaults across 350K+ records, helping institutions proactively manage NPA risk.</p>
+            <div class="arch">Python · logistic regression · SMOTE</div>
+            <span class="go static">Personal project</span>
+          </div>
         </div>
       </div>
     </section>
@@ -169,24 +551,181 @@
 
   <footer id="contact">
     <div class="container">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 800; letter-spacing: -0.02em;">Ready to optimize your data strategy?</h2>
-      <p style="margin-bottom: 2.5rem; font-size: 1.1rem;">Currently open for consultative roles, strategic BI leadership, and complex architectural challenges.</p>
-      
-      <a href="mailto:anwarmahammad@hotmail.com" class="btn" style="font-size: 1.1rem;">Get in Touch</a>
-      
+      <h2>Let's put your data <em>to work.</em></h2>
+      <p class="sub">Open to senior analytics consulting, BI leadership, and complex finance-intelligence and reconciliation challenges.</p>
+      <a href="mailto:anwarmahammad@hotmail.com" class="btn magnet"><span>Get in touch</span></a>
       <div class="footer-links">
         <a href="tel:+919440672016">+91-9440672016</a>
-        <span>&bull;</span>
         <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a>
-        <span>&bull;</span>
-        <a href="https://linkedin.com/in/ianvrr" target="_blank">LinkedIn</a>
-        <span>&bull;</span>
-        <a href="https://github.com/ianvrr" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/ianvrr" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ianvrr" target="_blank" rel="noopener">GitHub</a>
       </div>
-      
-      <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 2rem;">&copy; 2026 MD Anwar. Designed for Impact.</p>
+      <p class="copyright">© 2026 MD Anwar - Built with Lenis, GSAP &amp; Vanta.</p>
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (window.gsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+      /* ---------- VANTA (whisper-faint lattice on paper) ---------- */
+      if (!reduceMotion && window.VANTA && window.VANTA.NET && window.innerWidth > 760) {
+        try {
+          VANTA.NET({
+            el: '#vanta-bg',
+            mouseControls: true, touchControls: false, gyroControls: false,
+            minHeight: 200.0, minWidth: 200.0, scale: 1.0,
+            color: 0xb9b2a4, backgroundColor: 0xf1efe9,
+            points: 8.0, maxDistance: 19.0, spacing: 22.0, showDots: false
+          });
+        } catch (e) {}
+      }
+
+      /* ---------- LENIS ---------- */
+      let lenis = null;
+      if (!reduceMotion && window.Lenis) {
+        lenis = new Lenis({ duration: 1.1, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+        if (window.gsap && window.ScrollTrigger) {
+          lenis.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add((time) => lenis.raf(time * 1000));
+          gsap.ticker.lagSmoothing(0);
+        } else {
+          const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+          requestAnimationFrame(raf);
+        }
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href');
+          if (id.length < 2) return;
+          const t = document.querySelector(id);
+          if (!t) return;
+          e.preventDefault();
+          if (lenis) lenis.scrollTo(t, { offset: -60 });
+          else t.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+        });
+      });
+
+      /* ---------- HERO: reveal by real rendered lines ---------- */
+      const title = document.getElementById('hero-title');
+      if (title && window.gsap && !reduceMotion) {
+        const buildLines = () => {
+          const text = title.dataset.text || title.textContent.trim();
+          title.dataset.text = text;
+          title.style.textWrap = 'balance';
+          title.innerHTML = text.split(/\s+/).map((w) => '<span class="w">' + w + '</span>').join(' ');
+          const ws = Array.from(title.querySelectorAll('.w'));
+          const lines = []; let cur = [], top = null;
+          ws.forEach((s) => { const t = s.offsetTop; if (top === null) top = t; if (Math.abs(t - top) > 3) { lines.push(cur); cur = []; top = t; } cur.push(s.textContent); });
+          if (cur.length) lines.push(cur);
+          title.innerHTML = lines.map((l) => '<span class="ln"><span>' + l.join(' ') + '</span></span>').join('');
+          return Array.from(title.querySelectorAll('.ln > span'));
+        };
+        const inners = buildLines();
+        gsap.set(inners, { yPercent: 115 });
+        gsap.to(inners, { yPercent: 0, duration: 1.05, ease: 'power4.out', stagger: 0.12, delay: 0.15 });
+        let rt;
+        window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { const ni = buildLines(); gsap.set(ni, { yPercent: 0 }); if (window.ScrollTrigger) ScrollTrigger.refresh(); }, 220); });
+      }
+
+      /* ---------- REVEAL (section-level) ---------- */
+      const reveals = document.querySelectorAll('.reveal');
+      if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+        reveals.forEach((el) => gsap.fromTo(el, { opacity: 0, y: 22 }, {
+          opacity: 1, y: 0, duration: 0.9, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+        }));
+      } else { reveals.forEach((el) => el.classList.add('in')); }
+
+      /* ---------- COUNT-UP ---------- */
+      function countUp(el) {
+        const to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec || '0', 10);
+        if (reduceMotion || !window.gsap) { el.textContent = to.toFixed(dec); return; }
+        const o = { v: 0 };
+        gsap.to(o, { v: to, duration: 1.8, ease: 'power2.out', onUpdate: () => { el.textContent = o.v.toFixed(dec); } });
+      }
+      const counts = document.querySelectorAll('.count');
+      if (window.ScrollTrigger && !reduceMotion) counts.forEach((el) => ScrollTrigger.create({ trigger: el, start: 'top 92%', once: true, onEnter: () => countUp(el) }));
+      else counts.forEach((el) => el.textContent = parseFloat(el.dataset.to).toFixed(parseInt(el.dataset.dec || '0', 10)));
+
+      /* ---------- RUNTIME CHART ---------- */
+      const bars = document.querySelectorAll('.rt-bar'), vals = document.querySelectorAll('.rt-val');
+      function drawChart() {
+        if (reduceMotion || !window.gsap) {
+          bars.forEach((b) => { b.setAttribute('height', b.dataset.h); b.setAttribute('y', b.dataset.y); });
+          vals.forEach((v) => v.setAttribute('opacity', '1'));
+          return;
+        }
+        bars.forEach((b, i) => gsap.to(b, { attr: { height: +b.dataset.h, y: +b.dataset.y }, duration: 1.1, ease: 'power3.out', delay: i * 0.18 }));
+        gsap.to(vals, { attr: { opacity: 1 }, duration: 0.5, stagger: 0.1, delay: 0.6 });
+      }
+      const chart = document.querySelector('.runtime-chart');
+      if (chart) {
+        if (window.ScrollTrigger && !reduceMotion) ScrollTrigger.create({ trigger: chart, start: 'top 84%', once: true, onEnter: drawChart });
+        else drawChart();
+      }
+
+      /* ---------- HORIZONTAL GALLERY (lji-style pinned scroll) ---------- */
+      const track = document.getElementById('htrack');
+      const wrap = document.querySelector('.hwrap');
+      if (track && wrap && window.gsap && window.ScrollTrigger && !reduceMotion && window.innerWidth > 900) {
+        wrap.style.overflowX = 'hidden';
+        const amount = () => track.scrollWidth - window.innerWidth;
+        gsap.to(track, {
+          x: () => -amount(),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: wrap, start: 'top top', end: () => '+=' + amount(),
+            pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1
+          }
+        });
+      }
+
+      /* ---------- MAGNETIC buttons ---------- */
+      if (!reduceMotion && window.gsap && window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.magnet').forEach((btn) => {
+          btn.addEventListener('mousemove', (e) => {
+            const r = btn.getBoundingClientRect();
+            gsap.to(btn, { x: (e.clientX - r.left - r.width / 2) * 0.25, y: (e.clientY - r.top - r.height / 2) * 0.35, duration: 0.5, ease: 'power3.out' });
+          });
+          btn.addEventListener('mouseleave', () => gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' }));
+        });
+      }
+
+      /* ---------- NAV ---------- */
+      const nav = document.getElementById('nav');
+      let lastY = 0;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        nav.classList.toggle('scrolled', y > 16);
+        if (y > 160 && y > lastY) nav.classList.add('hidden'); else nav.classList.remove('hidden');
+        lastY = y;
+      }, { passive: true });
+
+      const ids = ['about', 'experience', 'capabilities', 'work', 'contact'];
+      const links = {};
+      document.querySelectorAll('.nav-links a').forEach((a) => links[a.getAttribute('href').slice(1)] = a);
+      if (window.ScrollTrigger) ids.forEach((id) => {
+        const sec = document.getElementById(id);
+        if (!sec) return;
+        ScrollTrigger.create({ trigger: sec, start: 'top 45%', end: 'bottom 45%', onToggle: (self) => {
+          if (self.isActive && links[id]) { Object.values(links).forEach((l) => l.classList.remove('active')); links[id].classList.add('active'); }
+        }});
+      });
+
+      if (window.ScrollTrigger) {
+        window.addEventListener('load', () => ScrollTrigger.refresh());
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
+      }
+    })();
+  </script>
 </body>
 </html>
