@@ -246,12 +246,14 @@
     .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 16px; }
     .kpi-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 16px 14px; position: relative; overflow: hidden; transition: border-color 0.35s var(--ease), transform 0.35s var(--ease); }
     .kpi-card:hover { border-color: var(--ink3); }
-    .kpi-card .kt { display: flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.01em; color: var(--ink3); margin-bottom: 14px; }
-    .kpi-card .kt svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.7; fill: none; opacity: 0.8; }
+    .kpi-card .khead { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 14px; }
+    .kpi-card .kt { display: flex; align-items: center; gap: 8px; min-width: 0; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.01em; color: var(--ink3); }
+    .kpi-card .kt span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .kpi-card .kt svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.7; fill: none; opacity: 0.8; flex: 0 0 14px; }
     .kpi-card .kv { font-family: 'Switzer'; font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2.05rem); letter-spacing: -0.02em; color: var(--ink); line-height: 1; font-feature-settings: 'tnum'; }
     .kpi-card .kv .u { color: var(--accent-ink); }
     .kpi-card .kl { margin-top: 9px; font-size: 11.5px; color: var(--ink3); line-height: 1.4; }
-    .kpi-card .kd { position: absolute; top: 16px; right: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 3px; padding: 2px 6px; border-radius: 20px; }
+    .kpi-card .kd { flex: 0 0 auto; white-space: nowrap; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 3px; padding: 2px 6px; border-radius: 20px; }
     .kpi-card .kd.up { color: var(--pos); background: color-mix(in srgb, var(--pos) 13%, transparent); }
     .kpi-card .kd.down { color: var(--neg); background: color-mix(in srgb, var(--neg) 13%, transparent); }
     .kpi-card .kd.neutral { color: var(--ink3); background: color-mix(in srgb, var(--ink3) 12%, transparent); }
@@ -440,7 +442,9 @@
       .work-grid { grid-template-columns: 1fr; }
       .caps { grid-template-columns: 1fr; }
       .xp-row { grid-template-columns: 1fr; gap: 10px; }
-      .xp-when { display: flex; gap: 10px; align-items: center; }
+      .xp-when { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+      .xp-when br { display: none; }
+      .xp-when .live-dot { margin-top: 0; }
       .ov-greet { flex-direction: column; align-items: flex-start; }
       .ov-actions { width: 100%; }
       .ov-actions .btn { flex: 1; }
@@ -560,26 +564,22 @@
           <!-- KPI TILES -->
           <div class="kpi-grid">
             <div class="kpi-card">
-              <div class="kt"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Breakage surfaced</div>
-              <span class="kd neutral">MXN</span>
+              <div class="khead"><div class="kt"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> <span>Breakage surfaced</span></div><span class="kd neutral">MXN</span></div>
               <div class="kv"><span class="count" data-to="85.5" data-dec="1">0</span><span class="u">M</span></div>
               <div class="kl">Hidden revenue a dashboard under-reported for 6 months</div>
             </div>
             <div class="kpi-card">
-              <div class="kt"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Reconciliation</div>
-              <span class="kd up">0 missed</span>
+              <div class="khead"><div class="kt"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> <span>Reconciliation</span></div><span class="kd up">0 missed</span></div>
               <div class="kv"><span class="count" data-to="100" data-dec="0">0</span><span class="u">%</span></div>
               <div class="kl">Daily accuracy, 0 missing records - years-long escalation closed</div>
             </div>
             <div class="kpi-card">
-              <div class="kt"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg> Dashboards live</div>
-              <span class="kd up">13 clients</span>
+              <div class="khead"><div class="kt"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg> <span>Dashboards live</span></div><span class="kd up">13 clients</span></div>
               <div class="kv"><span class="count" data-to="250" data-dec="0">0</span><span class="u">+</span></div>
               <div class="kl">Built &amp; maintained across 13 enterprise clients</div>
             </div>
             <div class="kpi-card">
-              <div class="kt"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg> Segmented / wk</div>
-              <span class="kd up">6 groups</span>
+              <div class="khead"><div class="kt"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg> <span>Segmented / wk</span></div><span class="kd up">6 groups</span></div>
               <div class="kv"><span class="count" data-to="13" data-dec="0">0</span><span class="u">M+</span></div>
               <div class="kl">Members segmented weekly into behavioral groups</div>
             </div>
