@@ -175,7 +175,7 @@
 
     .sb-nav { flex: 1 1 auto; overflow-y: auto; padding: 10px 12px 12px; }
     .sb-nav::-webkit-scrollbar { width: 0; }
-    .nav-group-label { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); padding: 14px 10px 8px; }
+    .nav-group-label { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.03em; color: var(--soft); padding: 14px 10px 8px; }
     .nav-item { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border-radius: 8px; color: var(--ink2); font-size: 13.5px; font-weight: 500; cursor: pointer; position: relative; transition: background 0.2s var(--ease), color 0.2s var(--ease); }
     .nav-item svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.7; fill: none; flex: 0 0 17px; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
     .nav-item:hover { background: var(--panel-2); color: var(--ink); }
@@ -190,12 +190,12 @@
     .status-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; }
     .status-card .row { display: flex; align-items: center; gap: 8px; }
     .status-card .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--pos); position: relative; flex: 0 0 8px; }
-    .status-card .pulse::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--pos); opacity: 0; animation: ping 2.4s var(--ease) infinite; }
+    .status-card .pulse::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--pos); opacity: 0.3; }
     @keyframes ping { 0% { transform: scale(0.6); opacity: 0.7; } 100% { transform: scale(1.8); opacity: 0; } }
     .status-card b { font-size: 12.5px; color: var(--ink); font-weight: 600; }
     .status-card p { font-size: 11px; color: var(--ink3); margin-top: 4px; line-height: 1.4; }
     .status-card .cta { display: block; margin-top: 10px; text-align: center; background: var(--accent); color: #111; font-weight: 600; font-size: 12.5px; padding: 8px; border-radius: 7px; transition: background 0.3s var(--ease), transform 0.3s var(--ease); }
-    .status-card .cta:hover { background: var(--accent-ink); color: #fff; transform: translateY(-1px); }
+    .status-card .cta:hover { background: var(--accent-ink); color: #fff; }
 
     /* ---- MAIN ---- */
     .main { grid-column: 2; min-width: 0; }
@@ -225,8 +225,8 @@
     .view { scroll-margin-top: calc(var(--topbar-h) + 18px); padding-top: 18px; }
     .view + .view { margin-top: clamp(40px, 6vw, 86px); padding-top: clamp(28px, 4vw, 48px); border-top: 1px solid var(--line); }
     .view-head { margin-bottom: 26px; }
-    .kicker { display: inline-flex; align-items: center; gap: 9px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); font-weight: 500; margin-bottom: 14px; }
-    .kicker::before { content: ''; width: 22px; height: 2px; border-radius: 2px; background: var(--grad); }
+    .kicker { display: inline-flex; align-items: center; gap: 9px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.02em; color: var(--ink3); font-weight: 500; margin-bottom: 14px; }
+    .kicker::before { content: ''; width: 22px; height: 2px; border-radius: 2px; background: var(--accent); }
     .view-title { font-size: clamp(1.7rem, 3.3vw, 2.5rem); color: var(--ink); max-width: 22ch; text-wrap: balance; }
     .view-sub { margin-top: 12px; font-size: 1.02rem; color: var(--ink2); max-width: 60ch; line-height: 1.6; }
 
@@ -237,7 +237,7 @@
     .ov-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 20px; border-radius: 9px; font-weight: 600; font-size: 0.92rem; color: #111; background: var(--accent); border: 1px solid var(--accent); cursor: pointer; transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease), border-color 0.35s var(--ease), color 0.35s var(--ease); white-space: nowrap; }
-    .btn:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; transform: translateY(-2px); box-shadow: 0 14px 28px -12px color-mix(in srgb, var(--accent-ink) 55%, transparent); }
+    .btn:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; }
     .btn-ghost { background: var(--panel); color: var(--ink); border-color: var(--line); }
     .btn-ghost:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); box-shadow: none; }
     .btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
@@ -245,10 +245,10 @@
     /* KPI GRID */
     .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 16px; }
     .kpi-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 16px 14px; position: relative; overflow: hidden; transition: border-color 0.35s var(--ease), transform 0.35s var(--ease); }
-    .kpi-card:hover { border-color: var(--ink3); transform: translateY(-3px); }
-    .kpi-card .kt { display: flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink3); margin-bottom: 14px; }
+    .kpi-card:hover { border-color: var(--ink3); }
+    .kpi-card .kt { display: flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.01em; color: var(--ink3); margin-bottom: 14px; }
     .kpi-card .kt svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.7; fill: none; opacity: 0.8; }
-    .kpi-card .kv { font-family: 'Switzer'; font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2.05rem); letter-spacing: -0.02em; color: var(--ink); line-height: 1; font-feature-settings: 'tnum'; }
+    .kpi-card .kv { font-family: 'Switzer'; font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2.05rem); letter-spacing: -0.02em; color: var(--ink); line-height: 1; font-feature-settings: 'tnum'; }
     .kpi-card .kv .u { color: var(--accent-ink); }
     .kpi-card .kl { margin-top: 9px; font-size: 11.5px; color: var(--ink3); line-height: 1.4; }
     .kpi-card .kd { position: absolute; top: 16px; right: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 3px; padding: 2px 6px; border-radius: 20px; }
@@ -325,8 +325,8 @@
     .fid-meta span { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink3); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; }
     .fid-visual { background: #0A0A0B; border-left: 1px solid var(--line); padding: clamp(20px, 2.4vw, 30px); display: flex; flex-direction: column; justify-content: center; position: relative; }
     :root[data-theme="light"] .fid-visual { background: #0F0F10; }
-    .fid-visual .vlabel { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #8F8F8F; margin-bottom: 4px; }
-    .fid-ebitda { font-family: 'Switzer'; font-weight: 700; font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: #fff; letter-spacing: -0.02em; line-height: 1; font-feature-settings: 'tnum'; }
+    .fid-visual .vlabel { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.02em; color: #8F8F8F; margin-bottom: 4px; }
+    .fid-ebitda { font-family: 'Switzer'; font-weight: 600; font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: #fff; letter-spacing: -0.02em; line-height: 1; font-feature-settings: 'tnum'; }
     .fid-ebitda .u { color: #FF894C; }
     .fid-match { display: inline-flex; align-items: center; gap: 7px; margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #35C58A; }
     .fid-match::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #35C58A; }
@@ -355,7 +355,7 @@
     /* ============ CAPABILITIES ============ */
     .caps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .cap { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
-    .cap h4 { display: flex; align-items: center; gap: 9px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink3); font-weight: 600; margin-bottom: 14px; }
+    .cap h4 { display: flex; align-items: center; gap: 9px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.01em; color: var(--ink3); font-weight: 500; margin-bottom: 14px; }
     .cap h4 svg { width: 15px; height: 15px; stroke: var(--accent-ink); stroke-width: 1.7; fill: none; opacity: 0.9; }
     .cap ul { list-style: none; display: grid; gap: 0; }
     .cap li { font-size: 0.9rem; color: var(--ink); padding: 8px 0; border-bottom: 1px solid var(--line-soft); }
@@ -364,7 +364,7 @@
     /* ============ WORK ============ */
     .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .case { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.4s var(--ease); }
-    .case:hover { border-color: var(--accent); box-shadow: var(--shadow); transform: translateY(-3px); }
+    .case:hover { border-color: var(--accent); }
     .case .cat { display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--ink3); margin-bottom: 14px; }
     .case .cat::before { content: ''; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); }
     .case h3 { font-size: 1.28rem; color: var(--ink); margin-bottom: 10px; }
@@ -378,7 +378,6 @@
 
     /* ============ CONTACT / FOOTER ============ */
     .contact { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: clamp(32px, 5vw, 60px); text-align: center; position: relative; overflow: hidden; }
-    .contact::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--grad); }
     .contact h2 { font-size: clamp(1.9rem, 4vw, 3rem); color: var(--ink); margin-bottom: 14px; text-wrap: balance; }
     .contact h2 .hl { color: var(--accent-ink); font-style: italic; }
     .contact .sub { color: var(--ink2); font-size: 1.05rem; margin-bottom: 26px; max-width: 54ch; margin-left: auto; margin-right: auto; }
@@ -569,28 +568,24 @@
               <span class="kd up">+MXN</span>
               <div class="kv"><span class="count" data-to="85.5" data-dec="1">0</span><span class="u">M</span></div>
               <div class="kl">Hidden revenue a dashboard under-reported for 6 months</div>
-              <div class="spark"><i style="height:20%"></i><i style="height:28%"></i><i style="height:22%"></i><i style="height:40%"></i><i style="height:35%"></i><i style="height:55%"></i><i class="on" style="height:92%"></i></div>
             </div>
             <div class="kpi-card reveal">
               <div class="kt"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Reconciliation</div>
               <span class="kd up">0 missed</span>
               <div class="kv"><span class="count" data-to="100" data-dec="0">0</span><span class="u">%</span></div>
               <div class="kl">Daily accuracy, 0 missing records - years-long escalation closed</div>
-              <div class="spark"><i style="height:40%"></i><i style="height:35%"></i><i style="height:55%"></i><i style="height:50%"></i><i style="height:70%"></i><i style="height:85%"></i><i class="on" style="height:100%"></i></div>
             </div>
             <div class="kpi-card reveal">
               <div class="kt"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg> Dashboards live</div>
               <span class="kd up">13 clients</span>
               <div class="kv"><span class="count" data-to="250" data-dec="0">0</span><span class="u">+</span></div>
               <div class="kl">Built &amp; maintained across 13 enterprise clients</div>
-              <div class="spark"><i style="height:25%"></i><i style="height:38%"></i><i style="height:48%"></i><i style="height:60%"></i><i style="height:70%"></i><i style="height:82%"></i><i class="on" style="height:95%"></i></div>
             </div>
             <div class="kpi-card reveal">
               <div class="kt"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg> Segmented / wk</div>
               <span class="kd up">6 groups</span>
               <div class="kv"><span class="count" data-to="13" data-dec="0">0</span><span class="u">M+</span></div>
               <div class="kl">Members segmented weekly into behavioral groups</div>
-              <div class="spark"><i style="height:30%"></i><i style="height:45%"></i><i style="height:38%"></i><i style="height:58%"></i><i style="height:52%"></i><i style="height:72%"></i><i class="on" style="height:90%"></i></div>
             </div>
           </div>
 
@@ -753,7 +748,7 @@
                 <div class="fid-bars">
                   <div class="fid-bar"><div class="bl"><span>Accruals</span><span>live</span></div><div class="track"><div class="fill" data-w="86" style="background:#FF894C;"></div></div></div>
                   <div class="fid-bar"><div class="bl"><span>Redemptions</span><span>live</span></div><div class="track"><div class="fill" data-w="64" style="background:#2E9DC2;"></div></div></div>
-                  <div class="fid-bar"><div class="bl"><span>Breakage</span><span>live</span></div><div class="track"><div class="fill" data-w="42" style="background:#8F7BD6;"></div></div></div>
+                  <div class="fid-bar"><div class="bl"><span>Breakage</span><span>live</span></div><div class="track"><div class="fill" data-w="42" style="background:rgba(255,255,255,0.28);"></div></div></div>
                   <div class="fid-bar"><div class="bl"><span>Budget variance</span><span>live</span></div><div class="track"><div class="fill" data-w="73" style="background:#E8603A;"></div></div></div>
                 </div>
               </div>
