@@ -12,8 +12,8 @@
   <meta property="og:url" content="https://ianvrr.github.io/">
   <meta property="og:title" content="MD Anwar | Analytics & Finance-Intelligence Consultant">
   <meta property="og:description" content="I turn large-scale loyalty and finance data into decisions executives can act on - AWS-native BI, reconciliation frameworks, and CFO-grade finance intelligence for programs with 10M+ members.">
-  <meta property="og:image" content="https://ianvrr.github.io/preview-image.jpg?v=3">
-  <meta property="og:image:secure_url" content="https://ianvrr.github.io/preview-image.jpg?v=3">
+  <meta property="og:image" content="https://ianvrr.github.io/preview-image.jpg?v=4">
+  <meta property="og:image:secure_url" content="https://ianvrr.github.io/preview-image.jpg?v=4">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
   <meta property="twitter:url" content="https://ianvrr.github.io/">
   <meta property="twitter:title" content="MD Anwar | Analytics & Finance-Intelligence Consultant">
   <meta property="twitter:description" content="I turn large-scale loyalty and finance data into decisions executives can act on - AWS-native BI, reconciliation frameworks, and CFO-grade finance intelligence for programs with 10M+ members.">
-  <meta property="twitter:image" content="https://ianvrr.github.io/preview-image.jpg?v=3">
+  <meta property="twitter:image" content="https://ianvrr.github.io/preview-image.jpg?v=4">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F0F0F'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3Ccircle cx='25' cy='22' r='2.4' fill='%23FF894C'/%3E%3C/svg%3E">
 
@@ -253,7 +253,8 @@
     .kpi-card .kl { margin-top: 9px; font-size: 11.5px; color: var(--ink3); line-height: 1.4; }
     .kpi-card .kd { position: absolute; top: 16px; right: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 3px; padding: 2px 6px; border-radius: 20px; }
     .kpi-card .kd.up { color: var(--pos); background: color-mix(in srgb, var(--pos) 13%, transparent); }
-    .kpi-card .kd.down { color: var(--pos); background: color-mix(in srgb, var(--pos) 13%, transparent); }
+    .kpi-card .kd.down { color: var(--neg); background: color-mix(in srgb, var(--neg) 13%, transparent); }
+    .kpi-card .kd.neutral { color: var(--ink3); background: color-mix(in srgb, var(--ink3) 12%, transparent); }
     .kpi-card .spark { display: flex; align-items: flex-end; gap: 3px; height: 20px; margin-top: 12px; }
     .kpi-card .spark i { flex: 1; background: var(--vctx); border-radius: 1px; display: block; min-height: 2px; }
     .kpi-card .spark i.on { background: var(--accent); }
@@ -371,7 +372,8 @@
     /* ============ WORK ============ */
     .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .case { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.4s var(--ease); }
-    .case:hover { border-color: var(--accent); }
+    .case { transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+    .case:hover { border-color: var(--accent); box-shadow: 0 4px 16px -4px rgba(0,0,0,0.3); }
     .case .cat { display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--ink3); margin-bottom: 14px; }
     .case .cat::before { content: ''; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); }
     .case h3 { font-size: 1.28rem; color: var(--ink); margin-bottom: 10px; }
@@ -399,8 +401,10 @@
     .reveal.in { opacity: 1; transform: none; transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
 
     /* ---- command palette ---- */
-    .cmdk-overlay { position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); display: none; align-items: flex-start; justify-content: center; padding-top: 14vh; }
-    .cmdk-overlay.open { display: flex; }
+    .cmdk-overlay { position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 14vh; visibility: hidden; opacity: 0; pointer-events: none; transition: opacity 150ms cubic-bezier(0.23,1,0.32,1), visibility 0ms 150ms; }
+    .cmdk-overlay.open { visibility: visible; opacity: 1; pointer-events: auto; transition: opacity 150ms cubic-bezier(0.23,1,0.32,1), visibility 0ms; }
+    .cmdk-overlay .cmdk { transform: scale(0.97); transition: transform 150ms cubic-bezier(0.23,1,0.32,1); }
+    .cmdk-overlay.open .cmdk { transform: scale(1); }
     .cmdk { width: min(560px, 92vw); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
     .cmdk-input { display: flex; align-items: center; gap: 11px; padding: 15px 18px; border-bottom: 1px solid var(--line); }
     .cmdk-input svg { width: 17px; height: 17px; stroke: var(--ink3); stroke-width: 2; fill: none; }
@@ -499,22 +503,6 @@
           Capabilities
         </a>
 
-        <div class="nav-group-label">Impact</div>
-        <a class="nav-item" href="#overview" data-view="overview">
-          <svg viewBox="0 0 24 24"><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/><circle cx="12" cy="12" r="3"/></svg>
-          Breakage surfaced
-          <span class="badge">85.5M</span>
-        </a>
-        <a class="nav-item" href="#experience" data-view="experience">
-          <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-          Reconciliation
-          <span class="badge">100%</span>
-        </a>
-        <a class="nav-item" href="#work" data-view="work">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
-          Members / week
-          <span class="badge">13M+</span>
-        </a>
       </nav>
 
       <div class="sb-foot">
@@ -559,7 +547,7 @@
             <div>
               <span class="kicker">Analytics &amp; finance-intelligence console</span>
               <h1 id="hero-title">I find the revenue <span class="hl">no one caught.</span></h1>
-              <p class="lead reveal">BI engineer and analytics consultant working where large-scale AWS data meets executive strategy - reconciliation, finance intelligence, and loyalty diagnostics for programs with 10M+ members.</p>
+              <p class="lead reveal">BI engineer who turns AWS data at scale into decisions CFOs and loyalty directors can act on - finance intelligence, reconciliation, and loyalty diagnostics for programs with 10M+ members.</p>
             </div>
             <div class="ov-actions reveal">
               <a href="mailto:anwarmahammad@hotmail.com" class="btn">Let's talk strategy</a>
@@ -571,25 +559,25 @@
 
           <!-- KPI TILES -->
           <div class="kpi-grid">
-            <div class="kpi-card reveal">
+            <div class="kpi-card">
               <div class="kt"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Breakage surfaced</div>
-              <span class="kd up">+MXN</span>
+              <span class="kd neutral">MXN</span>
               <div class="kv"><span class="count" data-to="85.5" data-dec="1">0</span><span class="u">M</span></div>
               <div class="kl">Hidden revenue a dashboard under-reported for 6 months</div>
             </div>
-            <div class="kpi-card reveal">
+            <div class="kpi-card">
               <div class="kt"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Reconciliation</div>
               <span class="kd up">0 missed</span>
               <div class="kv"><span class="count" data-to="100" data-dec="0">0</span><span class="u">%</span></div>
               <div class="kl">Daily accuracy, 0 missing records - years-long escalation closed</div>
             </div>
-            <div class="kpi-card reveal">
+            <div class="kpi-card">
               <div class="kt"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg> Dashboards live</div>
               <span class="kd up">13 clients</span>
               <div class="kv"><span class="count" data-to="250" data-dec="0">0</span><span class="u">+</span></div>
               <div class="kl">Built &amp; maintained across 13 enterprise clients</div>
             </div>
-            <div class="kpi-card reveal">
+            <div class="kpi-card">
               <div class="kt"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg> Segmented / wk</div>
               <span class="kd up">6 groups</span>
               <div class="kv"><span class="count" data-to="13" data-dec="0">0</span><span class="u">M+</span></div>
@@ -739,7 +727,7 @@
           <div class="fid reveal">
             <div class="fid-top">
               <div class="fid-copy">
-                <span class="fid-tag">● Live with first client · IFRS 15 · adding actuarial forecasting</span>
+                <span class="fid-tag">● Live · IFRS 15</span>
                 <h3>Fidivio - the world's first IFRS-compliant loyalty accounting platform.</h3>
                 <p>I'm a <strong>BI engineer on Fidivio</strong>, developing and maintaining the finance features and metrics that run the product - from the SQL behind its API payloads to the Python engines beneath the accounting layer.</p>
                 <ul class="fid-list">
