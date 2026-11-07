@@ -321,20 +321,27 @@
     .fid-copy h3 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); color: var(--ink); line-height: 1.12; margin-bottom: 14px; text-wrap: balance; }
     .fid-copy p { font-size: 0.98rem; color: var(--ink2); line-height: 1.65; margin-bottom: 14px; max-width: 48ch; }
     .fid-copy p strong { color: var(--ink); font-weight: 600; }
+    .fid-list { list-style: none; display: grid; gap: 11px; margin-top: 4px; }
+    .fid-list li { position: relative; padding-left: 20px; font-size: 0.93rem; color: var(--ink2); line-height: 1.55; }
+    .fid-list li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 7px; height: 2px; background: var(--accent); border-radius: 2px; }
+    .fid-list li strong { color: var(--ink); font-weight: 600; }
     .fid-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
     .fid-meta span { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink3); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; }
     .fid-visual { background: #0A0A0B; border-left: 1px solid var(--line); padding: clamp(20px, 2.4vw, 30px); display: flex; flex-direction: column; justify-content: center; position: relative; }
     :root[data-theme="light"] .fid-visual { background: #0F0F10; }
     .fid-visual .vlabel { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.02em; color: #8F8F8F; margin-bottom: 4px; }
-    .fid-ebitda { font-family: 'Switzer'; font-weight: 600; font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: #fff; letter-spacing: -0.02em; line-height: 1; font-feature-settings: 'tnum'; }
-    .fid-ebitda .u { color: #FF894C; }
-    .fid-match { display: inline-flex; align-items: center; gap: 7px; margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #35C58A; }
+    .fid-match { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #35C58A; }
     .fid-match::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #35C58A; }
-    .fid-bars { margin-top: 22px; display: grid; gap: 11px; }
-    .fid-bar .bl { display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B4B4B8; margin-bottom: 6px; }
-    .fid-bar .bl span:last-child { color: #ECECEE; }
-    .fid-bar .track { height: 7px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
-    .fid-bar .fill { height: 100%; border-radius: 4px; width: 0; transition: width 1.2s var(--ease); }
+    .brk-chart { width: 100%; height: auto; display: block; }
+    .brk-chart .brk-curve, .brk-chart .brk-tail { stroke-dasharray: 600; stroke-dashoffset: 600; }
+    .brk-chart.drawn .brk-curve { animation: brkDraw 1.4s var(--ease) forwards; }
+    .brk-chart.drawn .brk-tail { stroke-dasharray: 4 4; animation: brkFade 0.6s var(--ease) 1.1s forwards; opacity: 0; }
+    .brk-chart.drawn .brk-tail-fill { animation: brkFade 0.8s var(--ease) 1.2s forwards; }
+    @keyframes brkDraw { to { stroke-dashoffset: 0; } }
+    @keyframes brkFade { to { opacity: 1; } }
+    .brk-readout { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+    .brk-stat .bn { font-family: 'Switzer', sans-serif; font-weight: 700; font-size: 16px; color: #fff; letter-spacing: -0.01em; line-height: 1; }
+    .brk-stat .bl2 { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8F8F8F; margin-top: 5px; line-height: 1.3; }
     .fid-note { padding: 14px clamp(24px, 3vw, 38px); border-top: 1px solid var(--line); font-size: 12px; color: var(--ink3); font-family: 'IBM Plex Mono', monospace; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
     .fid-note .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: 0 0 6px; }
 
@@ -732,28 +739,54 @@
             <div class="fid-top">
               <div class="fid-copy">
                 <span class="fid-tag">● Live with first client · IFRS 15 · adding actuarial forecasting</span>
-                <h3>Fidivio - a CFO-facing finance product for loyalty programs.</h3>
-                <p>I'm a <strong>BI engineer on Fidivio</strong>, a finance-intelligence and IFRS 15-compliant accounting product for loyalty programs - built from zero to one over a 1+ year engagement and now live with its first client.</p>
-                <p>I wrote the <strong>Redshift SQL behind its API payloads</strong> - accruals, redemptions, CPP, yield, breakage, adjusted EBITDA, budget variance - and went beyond queries into the <strong>Python engines</strong>: the IFRS 15 liability engine behind the Accounting P&amp;L (points roll-forward, expected-redemption sub-ledger, three breakage-recognition methods), turning accounting policy into explicit, product-agreed rules.</p>
-                <p>Now building the calculation engine for a <strong>breakage forecasting</strong> module - cohort redemption curves and an actuarial <strong>Chain-Ladder</strong> forecast with analyst-editable factors - that reproduces finance's model cell-for-cell and caught an error in the model itself.</p>
-                <p>Diagnosed a slow dashboard as a <strong>query-planning</strong> problem (not data volume) and designed a single-pass rewrite returning identical results <strong>~4× faster</strong>; reconciled defects to <strong>8-decimal parity</strong> against the reference model.</p>
+                <h3>Fidivio - the world's first IFRS-compliant loyalty accounting platform.</h3>
+                <p>I'm a <strong>BI engineer on Fidivio</strong>, developing and maintaining the finance features and metrics that run the product - from the SQL behind its API payloads to the Python engines beneath the accounting layer.</p>
+                <ul class="fid-list">
+                  <li><strong>Finance metric surface</strong> - accruals, redemptions, CPP, yield, breakage, adjusted EBITDA and budget variance, as the Redshift SQL behind the product's API payloads.</li>
+                  <li><strong>IFRS 15 liability engine</strong> (Python) behind the Accounting P&amp;L - points roll-forward, expected-redemption sub-ledger, three breakage-recognition methods - turning accounting policy into explicit, product-agreed rules.</li>
+                  <li><strong>Breakage forecasting</strong> - building the calculation engine: cohort redemption curves and an actuarial Chain-Ladder forecast with analyst-editable factors that reproduces finance's model cell-for-cell (and caught an error in the model itself).</li>
+                  <li><strong>Performance &amp; reconciliation</strong> - diagnosed a slow dashboard as a query-planning problem (not data volume) for a single-pass rewrite ~4× faster; reconciled defects to 8-decimal parity against the reference model.</li>
+                </ul>
                 <div class="fid-meta">
                   <span>Redshift</span><span>Python / pandas</span><span>IFRS 15 liability modelling</span><span>Chain-Ladder / cohort</span><span>query-plan profiling</span><span>SQL ↔ Excel reconciliation</span>
                 </div>
               </div>
               <div class="fid-visual" id="fid-visual">
-                <div class="vlabel">Adjusted EBITDA · reconciled to model</div>
-                <div class="fid-ebitda">$<span class="count" data-to="48.21" data-dec="2">0</span><span class="u">M</span></div>
-                <div class="fid-match">matches reference model to 8 decimals</div>
-                <div class="fid-bars">
-                  <div class="fid-bar"><div class="bl"><span>Accruals</span><span>live</span></div><div class="track"><div class="fill" data-w="86" style="background:#FF894C;"></div></div></div>
-                  <div class="fid-bar"><div class="bl"><span>Redemptions</span><span>live</span></div><div class="track"><div class="fill" data-w="64" style="background:#2E9DC2;"></div></div></div>
-                  <div class="fid-bar"><div class="bl"><span>Breakage</span><span>live</span></div><div class="track"><div class="fill" data-w="42" style="background:rgba(255,255,255,0.28);"></div></div></div>
-                  <div class="fid-bar"><div class="bl"><span>Budget variance</span><span>live</span></div><div class="track"><div class="fill" data-w="73" style="background:#E8603A;"></div></div></div>
+                <div class="vlabel">Breakage forecast · Chain-Ladder on cohort curves</div>
+                <svg class="brk-chart" id="brk-chart" viewBox="0 0 360 210" role="img" aria-label="Cohort redemption curves climbing and flattening toward a forecast breakage tail">
+                  <defs>
+                    <linearGradient id="brkTail" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#FF894C" stop-opacity="0.22"/>
+                      <stop offset="100%" stop-color="#FF894C" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- axes -->
+                  <line x1="34" y1="18" x2="34" y2="166" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+                  <line x1="34" y1="166" x2="344" y2="166" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+                  <!-- forecast region divider -->
+                  <line class="brk-split" x1="250" y1="18" x2="250" y2="166" stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3 4"/>
+                  <!-- cohort redemption curves (actual, climbing & flattening) -->
+                  <path class="brk-curve" d="M34 150 C 70 120, 110 70, 160 54 S 230 44, 250 42" fill="none" stroke="#2E9DC2" stroke-width="2" stroke-linecap="round"/>
+                  <path class="brk-curve" d="M34 158 C 78 134, 120 92, 170 74 S 232 64, 250 62" fill="none" stroke="rgba(46,157,194,0.55)" stroke-width="2" stroke-linecap="round"/>
+                  <!-- forecast tail (dashed) + breakage fill -->
+                  <path class="brk-tail-fill" d="M250 42 C 278 38, 312 36, 344 35 L 344 166 L 250 166 Z" fill="url(#brkTail)" opacity="0"/>
+                  <path class="brk-tail" d="M250 42 C 278 38, 312 36, 344 35" fill="none" stroke="#FF894C" stroke-width="2.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+                  <!-- ultimate / breakage marker -->
+                  <line class="brk-ult" x1="34" y1="35" x2="344" y2="35" stroke="rgba(255,137,76,0.35)" stroke-width="1" stroke-dasharray="2 4"/>
+                  <circle class="brk-dot" cx="344" cy="35" r="3.5" fill="#FF894C"/>
+                  <!-- labels -->
+                  <text x="40" y="30" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#8F8F8F">ultimate redemption</text>
+                  <text x="150" y="182" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#8F8F8F" text-anchor="middle">development period →</text>
+                  <text x="297" y="182" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#FF894C" text-anchor="middle">forecast</text>
+                </svg>
+                <div class="brk-readout">
+                  <div class="brk-stat"><div class="bn">cell-for-cell</div><div class="bl2">reproduces finance's model</div></div>
+                  <div class="brk-stat"><div class="bn">130 × 130</div><div class="bl2">monthly triangle, ~0.65s</div></div>
                 </div>
+                <div class="fid-match">validated against the reference model to 8 decimals</div>
               </div>
             </div>
-            <div class="fid-note"><span class="dot"></span> Figures shown are illustrative of the metric surface, not client results. Partner and tenant names masked by design.</div>
+            <div class="fid-note"><span class="dot"></span> Visual is illustrative of the forecasting method, not client results. Partner and tenant names masked by design.</div>
           </div>
         </section>
 
@@ -762,7 +795,7 @@
           <div class="view-head">
             <span class="kicker">Selected work</span>
             <h2 class="view-title">Five problems, solved at scale.</h2>
-            <p class="view-sub">From a reimbursement-engine rebuild to loyalty diagnostics and credit-risk models - the queries behind decisions executives can act on.</p>
+            <p class="view-sub">From a reimbursement-engine rebuild to loyalty diagnostics and weekly segmentation at scale - the work behind decisions executives can act on.</p>
           </div>
 
           <div class="work-grid">
@@ -792,19 +825,11 @@
             </div>
 
             <div class="case reveal">
-              <div class="cat">Machine learning · Python</div>
-              <h3>F1 race analysis pipeline</h3>
-              <p>An end-to-end Python and FastF1 machine-learning pipeline analyzing historical Formula 1 telemetry to surface strategic pit-stop and performance insights across the 2023 season.</p>
-              <div class="arch">Python · FastF1 · scikit-learn · telemetry</div>
-              <a href="https://github.com/ianvrr/End-to-End_F1_Race_Analysis_using_Machine_Learning" target="_blank" rel="noopener" class="go">View repository <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-            </div>
-
-            <div class="case reveal">
-              <div class="cat">Risk modeling · Python</div>
-              <h3>Credit risk mitigation model</h3>
-              <p>A predictive logistic-regression model using SMOTE and threshold tuning to forecast loan defaults across 350K+ records, helping institutions proactively manage NPA risk.</p>
-              <div class="arch">Python · logistic regression · SMOTE · VIF</div>
-              <span class="go static">Personal project</span>
+              <div class="cat">Segmentation · analytics</div>
+              <h3>Weekly member segmentation</h3>
+              <p>Segment 13M+ members every week into six behavioral groups that feed campaign targeting and program analytics - a standing pipeline, not a one-off model. Built on RFM and behavioral signals, with the segments surfaced in the dashboards executives and marketing teams act on.</p>
+              <div class="arch">Redshift · RFM / behavioral segmentation · 13M+ members / week</div>
+              <span class="go static">Standing pipeline</span>
             </div>
 
             <div class="case reveal">
@@ -1056,10 +1081,13 @@
       if (rtChart) { if (window.ScrollTrigger && !reduceMotion) ScrollTrigger.create({ trigger: rtChart, start: 'top 86%', once: true, onEnter: drawRuntime }); else drawRuntime(); }
 
       /* ---------- FIDIVIO BARS ---------- */
-      const fidFills = document.querySelectorAll('.fid-bar .fill');
-      function drawFid() { fidFills.forEach((f) => { f.style.width = f.dataset.w + '%'; }); }
-      const fidVisual = document.getElementById('fid-visual');
-      if (fidVisual) { if (window.ScrollTrigger) ScrollTrigger.create({ trigger: fidVisual, start: 'top 88%', once: true, onEnter: drawFid }); else drawFid(); }
+      const brkChart = document.getElementById('brk-chart');
+      function drawBrk() { if (brkChart) brkChart.classList.add('drawn'); }
+      if (brkChart) {
+        if (reduceMotion) { drawBrk(); }
+        else if (window.ScrollTrigger) ScrollTrigger.create({ trigger: brkChart, start: 'top 88%', once: true, onEnter: drawBrk });
+        else drawBrk();
+      }
 
       /* ---------- SIDEBAR ACTIVE STATE ---------- */
       const navItems = Array.from(document.querySelectorAll('.nav-item[data-view]'));
