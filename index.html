@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://ianvrr.github.io/" />
   <title>Anwar | Analytics & Finance-Intelligence Console</title>
 
   <meta name="title" content="MD Anwar | Analytics & Finance-Intelligence Consultant">
@@ -39,15 +40,77 @@
     "@type": "Person",
     "name": "MD Anwar",
     "alternateName": "Anwar MD",
-    "jobTitle": "Business Intelligence Specialist (AWS) · Analytics & Finance-Intelligence Consultant",
+    "description": "Business Intelligence Specialist and analytics consultant turning large-scale loyalty and finance data into decisions CFOs and loyalty directors can act on through AWS-native BI, reconciliation frameworks, and IFRS 15-compliant finance intelligence for programs with 10M+ members.",
+    "jobTitle": "Business Intelligence Specialist · Analytics & Finance-Intelligence Consultant",
     "url": "https://ianvrr.github.io/",
-    "email": "mailto:anwarmahammad@hotmail.com",
+    "email": "anwarmahammad@hotmail.com",
     "telephone": "+91-9440672016",
     "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
     "worksFor": { "@type": "Organization", "name": "Loyalty Juggernaut" },
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Vardhaman College of Engineering (JNTUH)" },
-    "knowsAbout": ["Amazon Redshift", "Business Intelligence", "SQL", "PostgreSQL", "Amazon QuickSight", "Python", "AWS", "Finance Intelligence", "Data Reconciliation", "Loyalty Analytics", "IFRS 15", "Actuarial forecasting", "Chain-Ladder"],
-    "sameAs": ["https://linkedin.com/in/ianvrr", "https://github.com/ianvrr"]
+    "knowsAbout": ["Amazon Redshift", "Business Intelligence", "SQL", "PostgreSQL", "Amazon QuickSight", "Python", "AWS", "Finance Intelligence", "Data Reconciliation", "Loyalty Analytics", "IFRS 15", "Actuarial forecasting", "Chain-Ladder", "Apache Airflow", "Power BI", "RFM segmentation"],
+    "award": ["Juggernaut of the Month, August 2026", "CEO Commendation, Loyalty Juggernaut", "34× ADP MyMoment Award", "Best Outgoing Student, Mechanical Engineering, 2022"],
+    "sameAs": ["https://www.linkedin.com/in/ianvrr/", "https://github.com/ianvrr"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MD Anwar — Analytics & Finance-Intelligence Console",
+    "url": "https://ianvrr.github.io/",
+    "description": "Professional portfolio of MD Anwar, Business Intelligence Specialist specialising in AWS-native BI, IFRS 15 loyalty accounting, and large-scale data reconciliation.",
+    "author": { "@type": "Person", "name": "MD Anwar", "url": "https://ianvrr.github.io/" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What industries has MD Anwar worked in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MD Anwar has worked primarily in loyalty and finance intelligence across airline, hospitality, retail, and banking ecosystems, managing programs with 10 million or more members. At Loyalty Juggernaut he delivers analytics, finance intelligence, and reconciliation for two flagship global loyalty programs, including the world's largest hotel alliance. At ADP he led HR and payroll data migrations for Fortune 500 and large-enterprise clients across financial services, automotive, insurance, and government sectors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is IFRS 15 loyalty accounting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IFRS 15 requires loyalty programs to treat points as separate performance obligations and defer revenue recognition until redemption or expiry (breakage). MD Anwar is the BI engineer behind Fidivio's IFRS 15 accounting layer — building the Redshift SQL for its API payloads and the Python liability engine implementing points roll-forward, expected-redemption sub-ledger accounting, and three breakage-recognition methods. The model reconciles to 8-decimal parity against the reference finance model and caught an error in that model itself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What was the reimbursement algorithm rebuild and what impact did it have?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The stepped-model reimbursement algorithm for the world's largest hotel alliance ran as two separate pipelines each taking 12 to 14 hours, with recurring discrepancies between detailed and summary exports. MD Anwar rebuilt it around a single gold core table, reducing total daily runtime from approximately 26 hours to approximately 2 hours — roughly 6 times faster — eliminating the duplicate pipeline and resolving export discrepancies at source. The project earned Juggernaut of the Month for August 2026 and a CEO commendation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AWS and analytics tools does MD Anwar specialise in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MD Anwar's core stack is AWS-native: Amazon Redshift for the enterprise data warehouse, Amazon QuickSight and Power BI for dashboards, Python (pandas, NumPy) for modelling and automation, and Apache Airflow for orchestration. He also works with AWS DMS, S3, RDS (PostgreSQL), Glue, EventBridge, Lambda, and SNS. For finance intelligence he applies IFRS 15 liability modelling, Chain-Ladder actuarial forecasting, and cohort-based breakage recognition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is MD Anwar available for consulting or senior analytics roles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MD Anwar is open to senior analytics consulting, BI leadership, and complex finance-intelligence and reconciliation challenges. He is based in Hyderabad, Telangana, India, and open to Bengaluru or remote engagements. Contact him at anwarmahammad@hotmail.com or via LinkedIn at linkedin.com/in/ianvrr."
+        }
+      }
+    ]
   }
   </script>
 
@@ -379,6 +442,19 @@
     .cap li { font-size: 0.9rem; color: var(--ink); padding: 8px 0; border-bottom: 1px solid var(--line-soft); }
     .cap li:last-child { border-bottom: none; }
 
+    /* ============ FAQ ============ */
+    .faq-list { display: grid; gap: 10px; }
+    .faq-item { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 18px 20px; font-size: 1rem; font-weight: 600; color: var(--ink); cursor: pointer; list-style: none; user-select: none; }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q::after { content: ''; width: 16px; height: 16px; flex: 0 0 16px; border-radius: 50%; border: 1.5px solid var(--line); background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 12px no-repeat; transition: transform 0.2s var(--ease); }
+    .faq-item[open] .faq-q::after { transform: rotate(-180deg); }
+    .faq-item[open] { border-color: var(--accent); }
+    .faq-item[open] .faq-q { color: var(--accent-ink); }
+    .faq-a { padding: 0 20px 18px; border-top: 1px solid var(--line-soft); }
+    .faq-a p { font-size: 0.92rem; color: var(--ink2); line-height: 1.65; padding-top: 14px; }
+    .faq-a a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+
     /* ============ WORK ============ */
     .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .case { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.4s var(--ease); }
@@ -513,6 +589,10 @@
         <a class="nav-item" href="#capabilities" data-view="capabilities">
           <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6-6.3 4.6L8 13.9 2 9.4h7.6z"/></svg>
           Capabilities
+        </a>
+        <a class="nav-item" href="#faq" data-view="faq">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
+          FAQ
         </a>
 
       </nav>
@@ -909,6 +989,46 @@
           </div>
         </section>
 
+        <!-- ============ FAQ ============ -->
+        <section class="view" id="faq">
+          <div class="view-head">
+            <span class="kicker">Common questions</span>
+            <h2 class="view-title">What people ask.</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item reveal" open>
+              <summary class="faq-q">What industries has MD Anwar worked in?</summary>
+              <div class="faq-a">
+                <p>Primarily loyalty and finance intelligence across airline, hospitality, retail, and banking ecosystems — managing programs with 10 million or more members. At Loyalty Juggernaut, analytics, finance intelligence, and reconciliation for two flagship global loyalty programs, including the world's largest hotel alliance. At ADP, HR and payroll data migrations for Fortune 500 clients across financial services, automotive, insurance, and government.</p>
+              </div>
+            </details>
+            <details class="faq-item reveal">
+              <summary class="faq-q">What is IFRS 15 loyalty accounting?</summary>
+              <div class="faq-a">
+                <p>IFRS 15 requires loyalty programs to treat points as separate performance obligations and defer revenue recognition until redemption or expiry (breakage). I am the BI engineer behind Fidivio's IFRS 15 accounting layer — writing the Redshift SQL for its API payloads and the Python liability engine that implements points roll-forward, expected-redemption sub-ledger accounting, and three breakage-recognition methods. The model reconciles to 8-decimal parity against the reference finance model, and in the process caught an error in that model itself.</p>
+              </div>
+            </details>
+            <details class="faq-item reveal">
+              <summary class="faq-q">What was the reimbursement algorithm rebuild?</summary>
+              <div class="faq-a">
+                <p>The stepped-model reimbursement algorithm for the world's largest hotel alliance ran as two separate pipelines each taking 12–14 hours, with recurring discrepancies between detailed and summary exports. I rebuilt it around a single gold core table, reducing total daily runtime from roughly 26 hours to roughly 2 hours — about 6× faster — eliminating the duplicate pipeline and resolving export discrepancies at source. The project earned Juggernaut of the Month for August 2026 and a CEO commendation.</p>
+              </div>
+            </details>
+            <details class="faq-item reveal">
+              <summary class="faq-q">What AWS and analytics tools does MD Anwar specialise in?</summary>
+              <div class="faq-a">
+                <p>Core stack is AWS-native: Amazon Redshift for the enterprise data warehouse, Amazon QuickSight and Power BI for dashboards, Python (pandas, NumPy) for modelling and automation, and Apache Airflow for orchestration. I also work with AWS DMS, S3, RDS (PostgreSQL), Glue, EventBridge, Lambda, and SNS. For finance intelligence: IFRS 15 liability modelling, Chain-Ladder actuarial forecasting, and cohort-based breakage recognition.</p>
+              </div>
+            </details>
+            <details class="faq-item reveal">
+              <summary class="faq-q">Is MD Anwar available for consulting or senior analytics roles?</summary>
+              <div class="faq-a">
+                <p>Open to senior analytics consulting, BI leadership, and complex finance-intelligence and reconciliation challenges. Based in Hyderabad, Telangana, India — open to Bengaluru or remote engagements. Reach out at <a href="mailto:anwarmahammad@hotmail.com">anwarmahammad@hotmail.com</a> or via <a href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
         <!-- ============ CONTACT ============ -->
         <section class="view" id="contact">
           <div class="contact reveal">
@@ -1094,12 +1214,12 @@
       /* ---------- SIDEBAR ACTIVE STATE ---------- */
       const navItems = Array.from(document.querySelectorAll('.nav-item[data-view]'));
       const crumbEl = document.getElementById('crumb-view');
-      const viewTitles = { overview: 'Overview', experience: 'Experience', fidivio: 'Fidivio', work: 'Selected Work', capabilities: 'Capabilities', contact: 'Contact' };
+      const viewTitles = { overview: 'Overview', experience: 'Experience', fidivio: 'Fidivio', work: 'Selected Work', capabilities: 'Capabilities', faq: 'FAQ', contact: 'Contact' };
       function setActive(id) {
         navItems.forEach((n) => n.classList.toggle('active', n.dataset.view === id));
         if (crumbEl && viewTitles[id]) crumbEl.textContent = viewTitles[id];
       }
-      const views = ['overview', 'experience', 'fidivio', 'work', 'capabilities', 'contact'];
+      const views = ['overview', 'experience', 'fidivio', 'work', 'capabilities', 'faq', 'contact'];
       if (window.ScrollTrigger) {
         views.forEach((id) => { const sec = document.getElementById(id); if (!sec) return;
           ScrollTrigger.create({ trigger: sec, start: 'top 55%', end: 'bottom 55%', onToggle: (self) => { if (self.isActive) setActive(id); } });
@@ -1115,6 +1235,7 @@
         { label: 'Fidivio - finance product', id: 'fidivio', hint: 'IFRS · live', icon: 'M3 3v18h18M7 14l3-4 3 3 4-6' },
         { label: 'Selected Work', id: 'work', hint: '5 case studies', icon: 'M4 6h16M4 12h16M4 18h10' },
         { label: 'Capabilities', id: 'capabilities', hint: 'stack & tooling', icon: 'M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.4 5.4 21l2.3-7.1-6-4.5h7.6z' },
+        { label: 'FAQ', id: 'faq', hint: 'common questions', icon: 'M12 2a10 10 0 100 20A10 10 0 0012 2zM9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01' },
         { label: 'Contact', id: 'contact', hint: 'email · phone', icon: 'M2 4h20v16H2zM2 6l10 7 10-7' },
         { label: 'Email Anwar', href: 'mailto:anwarmahammad@hotmail.com', hint: 'anwarmahammad@hotmail.com', icon: 'M2 4h20v16H2zM2 6l10 7 10-7' },
         { label: 'LinkedIn', href: 'https://linkedin.com/in/ianvrr', hint: 'in/ianvrr', icon: 'M4 4h16v16H4zM8 11v6M8 8v.01M12 17v-3a2 2 0 014 0v3' },

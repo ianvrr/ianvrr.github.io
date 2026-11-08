@@ -1,0 +1,51 @@
+# MD Anwar — Analytics & Finance-Intelligence Consultant
+
+> Business Intelligence Specialist (AWS) and analytics consultant turning large-scale loyalty and finance data into decisions CFOs and loyalty directors can act on. Based in Hyderabad, Telangana, India.
+
+This is the professional portfolio of MD Anwar, currently Business Intelligence Specialist (AWS) at Loyalty Juggernaut (Aug 2025–present) and formerly Data Engineer at ADP National Account Services (Dec 2022–Aug 2025).
+
+## About
+
+MD Anwar builds AWS-native BI systems, IFRS 15-compliant finance intelligence platforms, and enterprise reconciliation frameworks for loyalty programs with 10M+ members. He owns the enterprise data warehouse and BI layer for two flagship global loyalty programs, delivering analytics and finance intelligence across airline, hospitality, retail, and banking ecosystems.
+
+## Key Achievements
+
+- Rebuilt the stepped-model reimbursement algorithm for the world's largest hotel alliance, reducing daily runtime from ~26 hours to ~2 hours (~6× faster) by consolidating two pipelines into a single gold core table. Earned Juggernaut of the Month (Aug 2026) and CEO commendation.
+- Surfaced ~85.5M MXN in under-reported breakage by root-causing a 6-month data integrity gap in a loyalty finance dashboard. Validated core points engine to 99.84% accuracy.
+- Re-architected billing-critical reconciliation to 100% daily accuracy with 0 missing records and proactive alerting, closing a years-long escalation.
+- Builds and maintains 250+ dashboards across 13 enterprise clients. Segments 13M+ members weekly into 6 behavioral groups.
+- BI engineer on Fidivio — the world's first IFRS 15-compliant loyalty accounting platform. Writes the Redshift SQL behind its API payloads and the Python liability and breakage-forecasting engines.
+
+## Expertise
+
+### Cloud & Data
+Amazon Redshift, Athena, Glue, DMS, S3, RDS (PostgreSQL), DynamoDB, SageMaker, Oracle SQL
+
+### Engineering
+Advanced SQL & query optimisation, Python (pandas, NumPy), Apache Airflow, Boto3, AWS CLI, EventBridge, Lambda, SNS
+
+### Business Intelligence
+Amazon QuickSight, Power BI, KPI design, RFM segmentation, fraud & anomaly detection
+
+### Domain
+Loyalty analytics (LPM), IFRS 15 finance intelligence, actuarial forecasting (Chain-Ladder), data reconciliation, breakage recognition
+
+## Work History
+
+- **Business Intelligence Specialist (AWS)** — Loyalty Juggernaut, Hyderabad (Aug 2025–present)
+- **Data Engineer, Product Implementation** — ADP National Account Services, Hyderabad (Dec 2022–Aug 2025)
+- **VP, Public Relations** — ADP Hyderabad Toastmasters Club (Jul 2023–Jul 2024)
+
+## Education
+
+- MPA — IGNOU (2026)
+- B.Tech, Mechanical Engineering — Vardhaman College of Engineering, JNTUH (2022)
+
+## Contact
+
+- Email: anwarmahammad@hotmail.com
+- Phone: +91-9440672016
+- Location: Hyderabad, Telangana, India (open to Bengaluru / remote)
+- LinkedIn: https://www.linkedin.com/in/ianvrr/
+- GitHub: https://github.com/ianvrr
+- Portfolio: https://ianvrr.github.io/
