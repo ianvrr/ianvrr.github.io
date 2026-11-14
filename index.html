@@ -237,7 +237,7 @@
     .sb-head { padding: 18px 20px 16px; border-bottom: 1px solid var(--line-soft); }
     .brand { display: flex; align-items: center; gap: 10px; }
     .brand .mark { width: 40px; height: 40px; border-radius: 10px; background: var(--ink); position: relative; flex: 0 0 40px; }
-    .brand .mark img { display: block; width: 40px; height: 40px; object-fit: cover; border-radius: 10px; }
+    .brand .mark img { display: block; width: 40px; height: 40px; object-fit: cover; object-position: center 12%; border-radius: 10px; }
     .brand .mark::after { content: ''; position: absolute; right: -3px; bottom: -3px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--panel); z-index: 1; }
     .brand .who { line-height: 1.15; }
     .brand .who b { display: block; font-family: var(--font-sans); font-weight: 600; color: var(--ink); font-size: 14.5px; letter-spacing: -0.01em; }
@@ -544,15 +544,6 @@
     .li-follow-btn { display: inline-flex; align-items: center; gap: 7px; background: #0A66C2; color: #fff; padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap; flex: 0 0 auto; transition: background 0.2s var(--ease); }
     .li-follow-btn:hover { background: #004182; }
     .li-follow-btn svg { width: 14px; height: 14px; fill: #fff; }
-    .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
-    .post-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s var(--ease); }
-    .post-card:hover { border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
-    .post-top { display: flex; align-items: center; justify-content: space-between; }
-    .post-date { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink3); }
-    .post-platform { font-family: var(--font-mono); font-size: 10px; color: var(--soft); }
-    .post-text { font-size: 13.5px; color: var(--ink2); line-height: 1.65; flex: 1; }
-    .post-read { font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-ink); font-weight: 500; display: inline-flex; align-items: center; gap: 4px; }
-    .post-read:hover { color: var(--accent); }
     @media (max-width: 600px) { .li-card { flex-direction: column; align-items: flex-start; } .li-follow-btn { width: 100%; justify-content: center; } }
 
     @media (max-width: 680px) {
@@ -1085,32 +1076,6 @@
             </a>
           </div>
 
-          <div class="post-grid">
-            <article class="post-card reveal">
-              <div class="post-top">
-                <span class="post-date">Oct 2026</span>
-                <span class="post-platform">91 reactions</span>
-              </div>
-              <p class="post-text">one "can you just check this query" turned into a pipeline running ~6× faster, zero diffs, and an alerting system that reconciles data daily and posts results to Slack before i log in. named Juggernaut of the Month at Loyalty Juggernaut.</p>
-              <a class="post-read" href="https://www.linkedin.com/posts/ianvrr_one-can-you-just-check-this-query-turned-share-7517264418376671232-tjcn/" target="_blank" rel="noopener">Read on LinkedIn</a>
-            </article>
-            <article class="post-card reveal">
-              <div class="post-top">
-                <span class="post-date">Nov 13, 2026</span>
-                <span class="post-platform">58 reactions</span>
-              </div>
-              <p class="post-text">right join is for interviews. a creator just analyzed 17 years of his own SQL — every query he's ever written. RIGHT JOIN? 0%. not once in 17 years. the real job is LEFT JOIN, GROUP BY, WHERE, and knowing why rows go missing.</p>
-              <a class="post-read" href="https://www.linkedin.com/posts/ianvrr_right-join-is-for-interviews-a-creator-share-7525198875171647488-jemV/" target="_blank" rel="noopener">Read on LinkedIn</a>
-            </article>
-            <article class="post-card reveal">
-              <div class="post-top">
-                <span class="post-date">Nov 9, 2026</span>
-                <span class="post-platform">26 reactions</span>
-              </div>
-              <p class="post-text">4 years in data. big data is anything that crashes Excel. a green dashboard can sit on top of a failing check job. i thought the job was building dashboards. the good work is understanding the WHY.</p>
-              <a class="post-read" href="https://www.linkedin.com/posts/ianvrr_4-years-in-data-big-data-is-anything-that-share-7525087535770034176-nDGl/" target="_blank" rel="noopener">Read on LinkedIn</a>
-            </article>
-          </div>
         </section>
 
         <!-- ============ CONTACT ============ -->
