@@ -236,9 +236,9 @@
     }
     .sb-head { padding: 18px 20px 16px; border-bottom: 1px solid var(--line-soft); }
     .brand { display: flex; align-items: center; gap: 10px; }
-    .brand .mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink); position: relative; flex: 0 0 34px; }
-    .brand .mark img { display: block; width: 34px; height: 34px; object-fit: cover; border-radius: 9px; }
-    .brand .mark::after { content: ''; position: absolute; right: 6px; bottom: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); z-index: 1; }
+    .brand .mark { width: 40px; height: 40px; border-radius: 10px; background: var(--ink); position: relative; flex: 0 0 40px; }
+    .brand .mark img { display: block; width: 40px; height: 40px; object-fit: cover; border-radius: 10px; }
+    .brand .mark::after { content: ''; position: absolute; right: -3px; bottom: -3px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--panel); z-index: 1; }
     .brand .who { line-height: 1.15; }
     .brand .who b { display: block; font-family: var(--font-sans); font-weight: 600; color: var(--ink); font-size: 14.5px; letter-spacing: -0.01em; }
     .brand .who span { font-family: var(--font-mono); font-size: 10px; color: var(--ink3); letter-spacing: 0.02em; }
@@ -581,7 +581,7 @@
     <aside class="sidebar" id="sidebar">
       <div class="sb-head">
         <div class="brand">
-          <div class="mark"><img src="avatar.jpg" alt="Anwar" width="34" height="34" loading="lazy"></div>
+          <div class="mark"><img src="avatar.jpg" alt="Anwar" width="40" height="40" loading="lazy"></div>
           <div class="who">
             <b>Anwar</b>
             <span>anwar.console</span>
@@ -1077,7 +1077,7 @@
             <img class="li-ava" src="avatar.jpg" alt="MD Anwar" width="48" height="48" loading="lazy">
             <div class="li-info">
               <div class="li-name">MD Anwar</div>
-              <div class="li-role">BI Specialist · Analytics &amp; Finance Intelligence · Posting daily on data, reconciliation, and loyalty analytics</div>
+              <div class="li-role">BI/ Analytics Engineer | Driving Growth Of Global Loyalty Programs | Ex- ADP</div>
             </div>
             <a class="li-follow-btn" href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener" aria-label="Follow Anwar on LinkedIn">
               <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-340.7a53.86 53.86 0 1153.86-53.86 53.86 53.86 0 01-53.86 53.86zM447.9 448h-92.68V302.4c0-34.7-.7-79.3-48.3-79.3-48.4 0-55.8 37.7-55.8 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
@@ -1088,27 +1088,27 @@
           <div class="post-grid">
             <article class="post-card reveal">
               <div class="post-top">
-                <span class="post-date">Nov 2026</span>
-                <span class="post-platform">LinkedIn</span>
-              </div>
-              <p class="post-text">Rebuilt a reimbursement algorithm around a single gold core table — cutting runtime from ~26 hours to ~2 hours and closing a years-long client escalation. The kind of fix that only happens when you trace the actual data flow end-to-end.</p>
-              <a class="post-read" href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener">Read on LinkedIn</a>
-            </article>
-            <article class="post-card reveal">
-              <div class="post-top">
-                <span class="post-date">Nov 2026</span>
-                <span class="post-platform">LinkedIn</span>
-              </div>
-              <p class="post-text">IFRS 15 requires loyalty programs to defer revenue until points are redeemed or expire. Building the liability engine for Fidivio taught me how strict this accounting really is — my model reconciles to 8-decimal parity, and caught a real error in the reference finance model.</p>
-              <a class="post-read" href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener">Read on LinkedIn</a>
-            </article>
-            <article class="post-card reveal">
-              <div class="post-top">
                 <span class="post-date">Oct 2026</span>
-                <span class="post-platform">LinkedIn</span>
+                <span class="post-platform">91 reactions</span>
               </div>
-              <p class="post-text">A finance dashboard had been under-reporting breakage for 6 months. ~85.5M MXN invisible. Root-causing data integrity issues before they compound is half the job in loyalty analytics — the other half is making sure the fix can't silently regress.</p>
-              <a class="post-read" href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener">Read on LinkedIn</a>
+              <p class="post-text">one "can you just check this query" turned into a pipeline running ~6× faster, zero diffs, and an alerting system that reconciles data daily and posts results to Slack before i log in. named Juggernaut of the Month at Loyalty Juggernaut.</p>
+              <a class="post-read" href="https://www.linkedin.com/posts/ianvrr_one-can-you-just-check-this-query-turned-share-7517264418376671232-tjcn/" target="_blank" rel="noopener">Read on LinkedIn</a>
+            </article>
+            <article class="post-card reveal">
+              <div class="post-top">
+                <span class="post-date">Nov 13, 2026</span>
+                <span class="post-platform">58 reactions</span>
+              </div>
+              <p class="post-text">right join is for interviews. a creator just analyzed 17 years of his own SQL — every query he's ever written. RIGHT JOIN? 0%. not once in 17 years. the real job is LEFT JOIN, GROUP BY, WHERE, and knowing why rows go missing.</p>
+              <a class="post-read" href="https://www.linkedin.com/posts/ianvrr_right-join-is-for-interviews-a-creator-share-7525198875171647488-jemV/" target="_blank" rel="noopener">Read on LinkedIn</a>
+            </article>
+            <article class="post-card reveal">
+              <div class="post-top">
+                <span class="post-date">Nov 9, 2026</span>
+                <span class="post-platform">26 reactions</span>
+              </div>
+              <p class="post-text">4 years in data. big data is anything that crashes Excel. a green dashboard can sit on top of a failing check job. i thought the job was building dashboards. the good work is understanding the WHY.</p>
+              <a class="post-read" href="https://www.linkedin.com/posts/ianvrr_4-years-in-data-big-data-is-anything-that-share-7525087535770034176-nDGl/" target="_blank" rel="noopener">Read on LinkedIn</a>
             </article>
           </div>
         </section>
