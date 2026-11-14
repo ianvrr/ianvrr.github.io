@@ -40,6 +40,7 @@
     "@type": "Person",
     "name": "MD Anwar",
     "alternateName": "Anwar MD",
+    "image": "https://ianvrr.github.io/avatar.jpg",
     "description": "Business Intelligence Specialist and analytics consultant turning large-scale loyalty and finance data into decisions CFOs and loyalty directors can act on through AWS-native BI, reconciliation frameworks, and IFRS 15-compliant finance intelligence for programs with 10M+ members.",
     "jobTitle": "Business Intelligence Specialist · Analytics & Finance-Intelligence Consultant",
     "url": "https://ianvrr.github.io/",
@@ -235,8 +236,9 @@
     }
     .sb-head { padding: 18px 20px 16px; border-bottom: 1px solid var(--line-soft); }
     .brand { display: flex; align-items: center; gap: 10px; }
-    .brand .mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-family: 'Fraunces', serif; font-weight: 500; font-size: 18px; position: relative; flex: 0 0 34px; }
-    .brand .mark::after { content: ''; position: absolute; right: 6px; bottom: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+    .brand .mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink); position: relative; flex: 0 0 34px; }
+    .brand .mark img { display: block; width: 34px; height: 34px; object-fit: cover; border-radius: 9px; }
+    .brand .mark::after { content: ''; position: absolute; right: 6px; bottom: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); z-index: 1; }
     .brand .who { line-height: 1.15; }
     .brand .who b { display: block; font-family: var(--font-sans); font-weight: 600; color: var(--ink); font-size: 14.5px; letter-spacing: -0.01em; }
     .brand .who span { font-family: var(--font-mono); font-size: 10px; color: var(--ink3); letter-spacing: 0.02em; }
@@ -250,7 +252,7 @@
 
     .sb-nav { flex: 1 1 auto; overflow-y: auto; padding: 10px 12px 12px; }
     .sb-nav::-webkit-scrollbar { width: 0; }
-    .nav-group-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.03em; color: var(--soft); padding: 14px 10px 8px; }
+    .nav-group-label { font-family: var(--font-mono); font-size: 9.5px; color: var(--soft); padding: 14px 10px 8px; }
     .nav-item { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border-radius: 8px; color: var(--ink2); font-size: 13.5px; font-weight: 500; cursor: pointer; position: relative; transition: background 0.2s var(--ease), color 0.2s var(--ease); }
     .nav-item svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.7; fill: none; flex: 0 0 17px; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
     .nav-item:hover { background: var(--panel-2); color: var(--ink); }
@@ -533,6 +535,37 @@
       .ov-actions { width: 100%; }
       .ov-actions .btn { flex: 1; }
     }
+    /* ===== WRITING / LINKEDIN ===== */
+    .li-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .li-card .li-ava { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex: 0 0 48px; }
+    .li-card .li-info { flex: 1; min-width: 0; }
+    .li-card .li-name { font-weight: 600; font-size: 15px; color: var(--ink); }
+    .li-card .li-role { font-size: 12.5px; color: var(--ink3); margin-top: 3px; line-height: 1.4; }
+    .li-follow-btn { display: inline-flex; align-items: center; gap: 7px; background: #0A66C2; color: #fff; padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap; flex: 0 0 auto; transition: background 0.2s var(--ease); }
+    .li-follow-btn:hover { background: #004182; }
+    .li-follow-btn svg { width: 14px; height: 14px; fill: #fff; }
+    .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+    .post-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s var(--ease); }
+    .post-card:hover { border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+    .post-top { display: flex; align-items: center; justify-content: space-between; }
+    .post-date { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink3); }
+    .post-platform { font-family: var(--font-mono); font-size: 10px; color: var(--soft); }
+    .post-text { font-size: 13.5px; color: var(--ink2); line-height: 1.65; flex: 1; }
+    .post-read { font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-ink); font-weight: 500; display: inline-flex; align-items: center; gap: 4px; }
+    .post-read:hover { color: var(--accent); }
+    @media (max-width: 600px) { .li-card { flex-direction: column; align-items: flex-start; } .li-follow-btn { width: 100%; justify-content: center; } }
+
+    @media (max-width: 680px) {
+      .work-grid { grid-template-columns: 1fr; }
+      .caps { grid-template-columns: 1fr; }
+      .xp-row { grid-template-columns: 1fr; gap: 10px; }
+      .xp-when { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+      .xp-when br { display: none; }
+      .xp-when .live-dot { margin-top: 0; }
+      .ov-greet { flex-direction: column; align-items: flex-start; }
+      .ov-actions { width: 100%; }
+      .ov-actions .btn { flex: 1; }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
       .reveal { opacity: 1; transform: none; }
@@ -548,7 +581,7 @@
     <aside class="sidebar" id="sidebar">
       <div class="sb-head">
         <div class="brand">
-          <div class="mark">A</div>
+          <div class="mark"><img src="avatar.jpg" alt="Anwar" width="34" height="34" loading="lazy"></div>
           <div class="who">
             <b>Anwar</b>
             <span>anwar.console</span>
@@ -593,6 +626,10 @@
         <a class="nav-item" href="#faq" data-view="faq">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
           FAQ
+        </a>
+        <a class="nav-item" href="#writing" data-view="writing">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          Writing
         </a>
 
       </nav>
@@ -1029,6 +1066,53 @@
           </div>
         </section>
 
+        <!-- ============ WRITING ============ -->
+        <section class="view" id="writing">
+          <div class="view-head">
+            <span class="kicker">Writing</span>
+            <h2 class="view-title">I write about BI and finance intelligence.</h2>
+          </div>
+
+          <div class="li-card reveal">
+            <img class="li-ava" src="avatar.jpg" alt="MD Anwar" width="48" height="48" loading="lazy">
+            <div class="li-info">
+              <div class="li-name">MD Anwar</div>
+              <div class="li-role">BI Specialist · Analytics &amp; Finance Intelligence · Posting daily on data, reconciliation, and loyalty analytics</div>
+            </div>
+            <a class="li-follow-btn" href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener" aria-label="Follow Anwar on LinkedIn">
+              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-340.7a53.86 53.86 0 1153.86-53.86 53.86 53.86 0 01-53.86 53.86zM447.9 448h-92.68V302.4c0-34.7-.7-79.3-48.3-79.3-48.4 0-55.8 37.7-55.8 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+              Follow
+            </a>
+          </div>
+
+          <div class="post-grid">
+            <article class="post-card reveal">
+              <div class="post-top">
+                <span class="post-date">Nov 2026</span>
+                <span class="post-platform">LinkedIn</span>
+              </div>
+              <p class="post-text">Rebuilt a reimbursement algorithm around a single gold core table — cutting runtime from ~26 hours to ~2 hours and closing a years-long client escalation. The kind of fix that only happens when you trace the actual data flow end-to-end.</p>
+              <a class="post-read" href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener">Read on LinkedIn</a>
+            </article>
+            <article class="post-card reveal">
+              <div class="post-top">
+                <span class="post-date">Nov 2026</span>
+                <span class="post-platform">LinkedIn</span>
+              </div>
+              <p class="post-text">IFRS 15 requires loyalty programs to defer revenue until points are redeemed or expire. Building the liability engine for Fidivio taught me how strict this accounting really is — my model reconciles to 8-decimal parity, and caught a real error in the reference finance model.</p>
+              <a class="post-read" href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener">Read on LinkedIn</a>
+            </article>
+            <article class="post-card reveal">
+              <div class="post-top">
+                <span class="post-date">Oct 2026</span>
+                <span class="post-platform">LinkedIn</span>
+              </div>
+              <p class="post-text">A finance dashboard had been under-reporting breakage for 6 months. ~85.5M MXN invisible. Root-causing data integrity issues before they compound is half the job in loyalty analytics — the other half is making sure the fix can't silently regress.</p>
+              <a class="post-read" href="https://www.linkedin.com/in/ianvrr/" target="_blank" rel="noopener">Read on LinkedIn</a>
+            </article>
+          </div>
+        </section>
+
         <!-- ============ CONTACT ============ -->
         <section class="view" id="contact">
           <div class="contact reveal">
@@ -1214,7 +1298,7 @@
       /* ---------- SIDEBAR ACTIVE STATE ---------- */
       const navItems = Array.from(document.querySelectorAll('.nav-item[data-view]'));
       const crumbEl = document.getElementById('crumb-view');
-      const viewTitles = { overview: 'Overview', experience: 'Experience', fidivio: 'Fidivio', work: 'Selected Work', capabilities: 'Capabilities', faq: 'FAQ', contact: 'Contact' };
+      const viewTitles = { overview: 'Overview', experience: 'Experience', fidivio: 'Fidivio', work: 'Selected Work', capabilities: 'Capabilities', faq: 'FAQ', writing: 'Writing', contact: 'Contact' };
       function setActive(id) {
         navItems.forEach((n) => n.classList.toggle('active', n.dataset.view === id));
         if (crumbEl && viewTitles[id]) crumbEl.textContent = viewTitles[id];
